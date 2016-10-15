@@ -2,7 +2,7 @@
   <div id="app">
     <img class="logo" src="./assets/logo.png">
     <hello></hello>
-    <login-dialog></login-dialog>
+    <login-dialog :regions="localRegions" :form-name="formName"></login-dialog>
 
   </div>
 </template>
@@ -17,7 +17,13 @@
       LoginDialog
     },
     data: () => {
-      return {}
+      return {
+        localRegions: [
+          {name: 'shanghai', code: 'sh'},
+          {name: 'hangzhou', code: 'hz'},
+        ],
+        formName: 'Test Form'
+      }
     }
   }
 </script>
