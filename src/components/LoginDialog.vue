@@ -25,7 +25,9 @@
   export default {
     data() {
       return {
-        form: {},
+        form: {
+          region: ""
+        },
         btnTitle: 'Open Dialog',
         dialogFormVisible: false,
         formLabelWidth: '200'
@@ -33,5 +35,3 @@
     }
   }
 </script>
-
-<style scoped></style>
