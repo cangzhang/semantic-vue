@@ -6,8 +6,8 @@
 
   </div>
 </template>
-<script>
 
+<script>
   import Hello from './components/Hello'
   import LoginDialog from './components/LoginDialog'
 

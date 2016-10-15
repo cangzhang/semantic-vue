@@ -14,9 +14,9 @@
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
-    <el-button @click.native="dialogFormVisible = false">取 消</el-button>
-    <el-button type="primary" @click.native="dialogFormVisible = false">确 定</el-button>
-  </span>
+        <el-button @click.native="dialogFormVisible = false">取 消</el-button>
+        <el-button type="primary" @click.native="dialogFormVisible = false">确 定</el-button>
+      </span>
     </el-dialog>
   </div>
 </template>
