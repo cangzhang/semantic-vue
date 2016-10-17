@@ -21,7 +21,7 @@
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click.native="cancelFormInput">Cancel</el-button>
-        <el-button type="primary" @click.native="saveFormData">{{ login ? 'Login' : 'Register' }}</el-button>
+        <el-button type="primary" @click.native="submit">{{ login ? 'Login' : 'Register' }}</el-button>
       </span>
     </el-dialog>
   </div>
@@ -48,18 +48,15 @@
     computed: {},
     watch: {},
     methods: {
-      getSwitchWidth() {
-        console.log(this.switchWidth)
-        return Number(this.switchWidth)
-      },
-      statusChange(){
-        this.login = !this.login
-        console.log(this.login)
-      },
       openDialog () {
         this.dialogFormVisible = true
       },
-      saveFormData () {
+      submit () {
+        if (this.login) {
+
+        } else {
+
+        }
         this.dialogFormVisible = false
         this.log()
       },
