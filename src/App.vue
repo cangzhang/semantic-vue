@@ -2,7 +2,7 @@
   <div id="app">
     <img class="logo" src="./assets/logo.png">
     <hello></hello>
-    <login-dialog :regions="localRegions" :form-name="formName"></login-dialog>
+    <login-dialog></login-dialog>
 
   </div>
 </template>

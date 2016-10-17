@@ -1,23 +1,27 @@
 <template>
   <div class="login-dialog">
-    <el-button type="primary" @click.native="dialogFormVisible = true">{{ btnTitle }}</el-button>
-    <el-dialog title="收货地址" v-model="dialogFormVisible">
-      <el-form :model="form">
-        <el-form-item label="活动名称" :label-width="formLabelWidth">
-          <el-input v-model="form.name" auto-complete="off"></el-input>
+    <el-button type="primary" @click.native="openDialog">{{ btnTitle }}</el-button>
+    <el-dialog title="Rock 'n Roll" v-model="dialogFormVisible">
+      <el-form v-model="form">
+        <el-form-item class="loginSwitch" label="Click to change Login / Register">
+          <el-switch v-model="login" on-text="" on-color="#324057" off-text="" off-color="#1D8CE0"></el-switch>
         </el-form-item>
-        <el-form-item label="活动区域" :label-width="formLabelWidth">
-          <el-select v-model="form.region" placeholder="请选择活动区域">
-            <el-option :label="region.name" :value="region.code" v-for="region in allRegions"></el-option>
-          </el-select>
+        <el-form-item label="Username">
+          <el-input placeholder="Username" v-model="form.username"></el-input>
         </el-form-item>
-        <!--<select name="region" v-model="form.region">
-          <option v-for="region in allRegions" :value="region.code">{{ region.name }}</option>
-        </select>-->
+        <el-form-item label="Password">
+          <el-input placeholder="Password" v-model="form.password" type="password" required></el-input>
+        </el-form-item>
+        <el-form-item label="Remember Me" v-if="login">
+          <el-switch v-model="form.rememberMe" on-color="#13ce66" off-color="#ff4949"></el-switch>
+        </el-form-item>
+        <el-form-item label="Email" v-else>
+          <el-input v-model="form.Email" placeholder="Email" on-color="#13ce66" off-color="#ff4949" required></el-input>
+        </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
-        <el-button @click.native="cancelFormInput">取 消</el-button>
-        <el-button type="primary" @click.native="saveFormData">确 定</el-button>
+        <el-button @click.native="cancelFormInput">Cancel</el-button>
+        <el-button type="primary" @click.native="saveFormData">{{ login ? 'Login' : 'Register' }}</el-button>
       </span>
     </el-dialog>
   </div>
@@ -25,47 +29,55 @@
 
 <script>
   export default {
-    props: {
-      regions: {
-        type: Array,
-        required: false
-      },
-      formName: {
-        type: String,
-        required: false
-      }
-    },
+    props: {},
     data() {
       return {
         form: {
-          name: this.formName,
-          region: ''
+          username: '',
+          password: '',
+          email: '',
+          rememberMe: false
         },
-        allRegions: this.regions,
         btnTitle: 'Open Dialog',
         dialogFormVisible: false,
-        formLabelWidth: '200'
+        formLabelWidth: '200',
+        login: true
       }
     },
-    created: function () {
-      console.log(this.regions)
-      console.log(this.formName)
-    },
+    created: function () {},
     computed: {},
     watch: {},
     methods: {
-      saveFormData: function () {
-        this.dialogFormVisible = false
-        console.log(this.form)
+      getSwitchWidth() {
+        console.log(this.switchWidth)
+        return Number(this.switchWidth)
       },
-      cancelFormInput: function () {
+      statusChange(){
+        this.login = !this.login
+        console.log(this.login)
+      },
+      openDialog () {
+        this.dialogFormVisible = true
+      },
+      saveFormData () {
         this.dialogFormVisible = false
-        this.form = {
-          name: '',
-          region: ''
-        }
-        console.log(this.form)
+        this.log()
+      },
+      cancelFormInput () {
+        this.dialogFormVisible = false
+        this.log()
+      },
+      log() {
+        console.log(this.form.username)
+        console.log(this.form.password)
+        console.log(this.form.rememberMe)
       }
     }
   }
 </script>
+
+<style>
+  .loginSwitch {
+    margin-bottom: 0;
+  }
+</style>
