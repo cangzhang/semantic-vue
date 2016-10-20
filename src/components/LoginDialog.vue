@@ -16,7 +16,7 @@
           <el-switch v-model="form.rememberMe" on-color="#13ce66" off-color="#ff4949"></el-switch>
         </el-form-item>
         <el-form-item label="Email" v-else>
-          <el-input v-model="form.Email" placeholder="Email" on-color="#13ce66" off-color="#ff4949" required></el-input>
+          <el-input v-model="form.email" placeholder="Email" on-color="#13ce66" off-color="#ff4949" required></el-input>
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
@@ -29,33 +29,53 @@
 
 <script>
   export default {
-    props: {},
+    props   : {},
     data() {
       return {
-        form: {
-          username: '',
-          password: '',
-          email: '',
+        form             : {
+          username  : '',
+          password  : '',
+          email     : '',
           rememberMe: false
         },
-        btnTitle: 'Open Dialog',
+        btnTitle         : 'Open Dialog',
         dialogFormVisible: false,
-        formLabelWidth: '200',
-        login: true
+        formLabelWidth   : '200',
+        login            : true
       }
     },
-    created: function () {},
+    created : function () {
+    },
     computed: {},
-    watch: {},
-    methods: {
+    watch   : {},
+    methods : {
       openDialog () {
         this.dialogFormVisible = true
       },
       submit () {
+        let loginUrl = 'http://v.dev/api/login'
+        let regUrl = 'http://v.dev/api/register'
+        let loginInfo = {
+          username: this.form.username,
+          password: this.form.password
+        }
+        let regInfo = {
+          username: this.form.username,
+          password: this.form.password,
+          email   : this.form.email
+        }
         if (this.login) {
-
+          this.$http.post(loginUrl, loginInfo)
+            .then((data) => {
+              localStorage.setItem('Token', data.body.token)
+            })
         } else {
-
+          this.$http.post(regUrl, regInfo)
+            .then((data) => {
+              if (data.body.created) {
+                alert('You have been registered successfully.')
+              }
+            })
         }
         this.dialogFormVisible = false
         this.log()

@@ -16,14 +16,8 @@
       Hello,
       LoginDialog
     },
-    data: () => {
-      return {
-        localRegions: [
-          {name: 'shanghai', code: 'sh'},
-          {name: 'hangzhou', code: 'hz'},
-        ],
-        formName: 'Test Form'
-      }
+    data      : () => {
+      return {}
     }
   }
 </script>

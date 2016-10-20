@@ -3,14 +3,18 @@
 
 // import $ from "jquery"
 import Vue from 'vue'
+import VueResource from 'vue-resource'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import App from './App'
 
 Vue.use(Element)
+Vue.use(VueResource)
+Vue.http.options.xhr = {withCredentials: true};
+Vue.http.options.emulateJSON = true;
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el    : '#app',
   render: h => h(App)
 })
