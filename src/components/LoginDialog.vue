@@ -78,16 +78,9 @@
             })
         }
         this.dialogFormVisible = false
-        this.log()
       },
       cancelFormInput () {
         this.dialogFormVisible = false
-        this.log()
-      },
-      log() {
-        console.log(this.form.username)
-        console.log(this.form.password)
-        console.log(this.form.rememberMe)
       }
     }
   }
