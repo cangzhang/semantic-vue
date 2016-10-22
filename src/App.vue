@@ -3,7 +3,6 @@
     <img class="logo" src="./assets/logo.png">
     <hello></hello>
     <login-dialog></login-dialog>
-
   </div>
 </template>
 
