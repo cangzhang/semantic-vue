@@ -2,18 +2,24 @@
   <div id="app">
     <img class="logo" src="./assets/logo.png">
     <hello></hello>
+    <span></span>
     <login-dialog></login-dialog>
+    <span></span>
+    <semantic-component></semantic-component>
+
   </div>
 </template>
 
 <script>
   import Hello from './components/Hello'
   import LoginDialog from './components/LoginDialog'
+  import SemanticComponent from './components/SemanticComponent.vue'
 
   export default {
     components: {
       Hello,
-      LoginDialog
+      LoginDialog,
+      SemanticComponent
     },
     data      : () => {
       return {}

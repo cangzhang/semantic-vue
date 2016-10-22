@@ -22,9 +22,10 @@ module.exports = merge(baseWebpackConfig, {
       jQuery         : "jquery",
       "window.jQuery": "jquery",
       "root.jQuery"  : "jquery",
-      semantic       : 'semantic-ui-css',
-      Semantic       : 'semantic-ui-css',
-      "semantic-ui"  : 'semantic-ui-css'
+
+      semantic     : 'semantic-ui-css',
+      Semantic     : 'semantic-ui-css',
+      'semantic-ui': 'semantic-ui-css'
     }),
 
     new webpack.DefinePlugin({
@@ -41,9 +42,9 @@ module.exports = merge(baseWebpackConfig, {
       inject  : true
     })
   ],
-  resolve: {
+/*  resolve: {
     alias: {
       jquery: "jquery/dist/jquery"
     }
-  },
+  },*/
 })

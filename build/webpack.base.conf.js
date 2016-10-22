@@ -20,7 +20,7 @@ module.exports = {
       'src'       : path.resolve(__dirname, '../src'),
       'assets'    : path.resolve(__dirname, '../src/assets'),
       'components': path.resolve(__dirname, '../src/components'),
-      'semantic'  : path.resolve(__dirname, '../node_modules/semantic-ui/semantic.js')
+      'semantic'  : path.resolve(__dirname, '../node_modules/semantic-ui-css/semantic.min.js')
     }
   },
   resolveLoader: {
@@ -36,7 +36,7 @@ module.exports = {
         test   : /\.js$/,
         loader : 'babel',
         include: projectRoot,
-        exclude: /node_modules/
+        exclude: /node_modules/ || /semantic/
       },
       {
         test  : /\.json$/,
