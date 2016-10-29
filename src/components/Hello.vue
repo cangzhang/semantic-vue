@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <div class="aaa"></div>
+    <h2>{{ msg }}</h2>
   </div>
 </template>
 
@@ -8,7 +9,7 @@
   export default {
     data () {
       return {
-        msg: 'Hello Vue!'
+        msg: 'Hello!'
       }
     }
   }
@@ -16,7 +17,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  h1 {
+  h2 {
     color: #42b983;
   }
 </style>

@@ -1,11 +1,12 @@
 <template>
   <div id="app">
+    <div></div>
     <img class="logo" src="./assets/logo.png">
     <hello></hello>
-    <span></span>
-    <login-dialog></login-dialog>
-    <span></span>
-    <semantic-component></semantic-component>
+    <button class="ui primary button" @click="openModal">OPEN</button>
+    <modal :display="toggle"></modal>
+    <!--<login-dialog></login-dialog>-->
+    <!--<semantic-component></semantic-component>-->
 
   </div>
 </template>
@@ -14,15 +15,30 @@
   import Hello from './components/Hello'
   import LoginDialog from './components/LoginDialog'
   import SemanticComponent from './components/SemanticComponent.vue'
+  import Modal from './components/Modal.vue'
 
   export default {
     components: {
       Hello,
-      LoginDialog,
-      SemanticComponent
+//      LoginDialog,
+//      SemanticComponent,
+      Modal
     },
-    data      : () => {
-      return {}
+    data() {
+      return {
+        show: false,
+        toggle: ''
+      }
+    },
+    methods: {
+      openModal() {
+        return this.toggle = !this.show
+      }
+    },
+    watch: {
+      toggle: (val)=> {
+        console.log(val)
+      }
     }
   }
 </script>
