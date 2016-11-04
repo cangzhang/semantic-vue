@@ -21,22 +21,19 @@
 <script>
   export default {
     props  : ['display'],
-    mounted () {
-      $(this.$el).find('.s-modal').modal()
-    },
     methods: {
-      showModal: function () {
+      showModal() {
         $(this.$el).find('.s-modal').modal('show')
       },
-      notify() {
+      /*notify() {
         this.$dispatch('status-changed', this.show)
-      }
+      }*/
     },
     watch  : {
-      display: (val) => {
+      display(val) {
         if (val) {
           console.log('in', val)
-          $('.s-modal').modal('show')
+          this.showModal()
         }
       }
     }

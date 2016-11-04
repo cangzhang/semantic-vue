@@ -33,7 +33,7 @@
       }
     },
     watch     : {
-      show: (val) => {
+      show(val) {
         console.log('out', val)
       }
     },
