@@ -3,13 +3,13 @@
     <div class="ui modal s-modal">
       <i class="close icon"></i>
       <div class="header">
-        Profile Picture
+        Profile
       </div>
       <div class="actions">
-        <div class="ui black deny button">
-          Nope
+        <div class="ui black deny button" @click="notify()">
+          No
         </div>
-        <div class="ui positive right labeled icon button">
+        <div class="ui positive right labeled icon button" @click="notify()">
           Yes
           <i class="checkmark icon"></i>
         </div>
@@ -20,29 +20,24 @@
 
 <script>
   export default {
-    props:['display'],
-    data() {
-      return {
-        show: this.display
-      }
-    },
-    mounted() {
-      console.log('mounted ' + this.show)
+    props  : ['display'],
+    mounted () {
       $(this.$el).find('.s-modal').modal()
     },
     methods: {
-      toggleModal(show) {
-        if (show) {
-          $(this.$el).find('.s-modal').modal('show')
-        } else {
-          $(this.$el).find('.s-modal').modal('hide')
-        }
+      showModal: function () {
+        $(this.$el).find('.s-modal').modal('show')
+      },
+      notify() {
+        this.$dispatch('status-changed', this.show)
       }
     },
-    watch: {
-      show: (val) => {
-        console.log('watch ' + val)
-        this.toggleModal(val)
+    watch  : {
+      display: (val) => {
+        if (val) {
+          console.log('in', val)
+          $('.s-modal').modal('show')
+        }
       }
     }
   }

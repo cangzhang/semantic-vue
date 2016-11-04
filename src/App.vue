@@ -1,21 +1,19 @@
 <template>
   <div id="app">
-    <div></div>
     <img class="logo" src="./assets/logo.png">
     <hello></hello>
-    <button class="ui primary button" @click="openModal">OPEN</button>
-    <modal :display="toggle"></modal>
+    <modal :display="show"></modal>
+    <button class="ui primary button" @click="openModal">OPEN Modal</button>
     <!--<login-dialog></login-dialog>-->
     <!--<semantic-component></semantic-component>-->
-
   </div>
 </template>
 
 <script>
   import Hello from './components/Hello'
-  import LoginDialog from './components/LoginDialog'
-  import SemanticComponent from './components/SemanticComponent.vue'
   import Modal from './components/Modal.vue'
+  //  import LoginDialog from './components/LoginDialog'
+  //  import SemanticComponent from './components/SemanticComponent.vue'
 
   export default {
     components: {
@@ -26,18 +24,22 @@
     },
     data() {
       return {
-        show: false,
-        toggle: ''
+        show: false
       }
     },
-    methods: {
+    methods   : {
       openModal() {
-        return this.toggle = !this.show
+        this.show = !this.show
       }
     },
-    watch: {
-      toggle: (val)=> {
-        console.log(val)
+    watch     : {
+      show: (val) => {
+        console.log('out', val)
+      }
+    },
+    events    : {
+      'status-changed': (status) => {
+        this.show = status
       }
     }
   }
