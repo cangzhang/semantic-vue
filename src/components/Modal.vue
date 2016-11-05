@@ -6,10 +6,10 @@
         Profile
       </div>
       <div class="actions">
-        <div class="ui black deny button" @click="notify()">
+        <div class="ui black deny button" @click="close()">
           No
         </div>
-        <div class="ui positive right labeled icon button" @click="notify()">
+        <div class="ui positive right labeled icon button" @click="close()">
           Yes
           <i class="checkmark icon"></i>
         </div>
@@ -25,12 +25,19 @@
       showModal() {
         $(this.$el).find('.s-modal').modal('show')
       },
-      /*notify() {
-        this.$dispatch('status-changed', this.show)
-      }*/
+      close() {
+        console.log('modeStatus before', this.modeStatus)
+//        this.modeStatus = !this.modeStatus
+//        console.log('modeStatus after', this.modeStatus)
+      }
+    },
+    computed: {
+      modeStatus() {
+        return this.display
+      }
     },
     watch  : {
-      display(val) {
+      display (val) {
         if (val) {
           console.log('in', val)
           this.showModal()

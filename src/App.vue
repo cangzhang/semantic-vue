@@ -2,7 +2,7 @@
   <div id="app">
     <img class="logo" src="./assets/logo.png">
     <hello></hello>
-    <modal :display="show"></modal>
+    <modal :display.sync="show"></modal>
     <button class="ui primary button" @click="openModal">OPEN Modal</button>
     <!--<login-dialog></login-dialog>-->
     <!--<semantic-component></semantic-component>-->
@@ -34,12 +34,7 @@
     },
     watch     : {
       show(val) {
-        console.log('out', val)
-      }
-    },
-    events    : {
-      'status-changed': (status) => {
-        this.show = status
+        console.log('watch show', val)
       }
     }
   }
