@@ -2,7 +2,7 @@
   <div id="app">
     <img class="logo" src="./assets/logo.png">
     <hello></hello>
-    <modal :display.sync="show"></modal>
+    <modal :display="show"></modal>
     <button class="ui primary button" @click="openModal">OPEN Modal</button>
     <!--<login-dialog></login-dialog>-->
     <!--<semantic-component></semantic-component>-->

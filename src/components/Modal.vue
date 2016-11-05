@@ -20,8 +20,8 @@
 
 <script>
   export default {
-    props  : ['display'],
-    methods: {
+    props   : ['display'],
+    methods : {
       showModal() {
         $(this.$el).find('.s-modal').modal('show')
       },
@@ -36,7 +36,7 @@
         return this.display
       }
     },
-    watch  : {
+    watch   : {
       display (val) {
         if (val) {
           console.log('in', val)
