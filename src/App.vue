@@ -2,7 +2,7 @@
   <div id="app">
     <img class="logo" src="./assets/logo.png">
     <hello></hello>
-    <modal :display="show" ref="sModal"></modal>
+    <login-modal :display="show" ref="sModal"></login-modal>
     <button class="ui primary button" @click="openModal">OPEN Modal</button>
     <!--<login-dialog></login-dialog>-->
     <!--<semantic-component></semantic-component>-->
@@ -11,16 +11,16 @@
 
 <script>
   import Hello from './components/Hello'
-  import Modal from './components/Modal.vue'
+  import LoginModal from './components/LoginModal.vue'
   //  import LoginDialog from './components/LoginDialog'
   //  import SemanticComponent from './components/SemanticComponent.vue'
 
   export default {
     components: {
       Hello,
+      LoginModal
 //      LoginDialog,
 //      SemanticComponent,
-      Modal
     },
     data() {
       return {

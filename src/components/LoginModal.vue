@@ -1,5 +1,5 @@
 <template>
-  <div class="modal">
+  <div class="login-modal">
     <div class="ui modal s-modal">
       <i class="close icon"></i>
       <div class="header">
