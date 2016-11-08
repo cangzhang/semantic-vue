@@ -20,28 +20,19 @@
 
 <script>
   export default {
-    props   : ['display'],
-    methods : {
+    name   : 's-modal',
+    props  : ['display'],
+    methods: {
       showModal() {
-        $(this.$el).find('.s-modal').modal('show')
+        $('.s-modal').modal('show')
       },
       close() {
-        console.log('modeStatus before', this.modeStatus)
-//        this.modeStatus = !this.modeStatus
-//        console.log('modeStatus after', this.modeStatus)
+        this.modeStatus = false
       }
     },
-    computed: {
-      modeStatus() {
-        return this.display
-      }
-    },
-    watch   : {
-      display (val) {
-        if (val) {
-          console.log('in', val)
-          this.showModal()
-        }
+    watch  : {
+      display (newVal) {
+        this.showModal()
       }
     }
   }

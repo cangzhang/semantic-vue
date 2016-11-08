@@ -18,11 +18,12 @@ Vue.use(VueResource)
 window.$ = jquery
 window.jQuery = jquery
 
-Vue.http.options.xhr = {withCredentials: true};
-Vue.http.options.emulateJSON = true;
+Vue.http.options.xhr = {withCredentials: true}
+Vue.http.options.emulateJSON = true
+Vue.config.devtools = false
 
 /* eslint-disable no-new */
-new Vue({
+const eventHub = new Vue({
   el    : '#app',
   render: h => h(App)
 })
