@@ -44,8 +44,7 @@
         login            : true
       }
     },
-    created : function () {
-    },
+    created : function () {},
     computed: {},
     watch   : {},
     methods : {

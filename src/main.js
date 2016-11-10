@@ -13,17 +13,19 @@ import '../semantic/dist/semantic.css'
 import App from './App'
 
 Vue.use(VueResource)
-// Vue.use(Element)
+  // Vue.use(Element)
 
 window.$ = jquery
 window.jQuery = jquery
 
-Vue.http.options.xhr = {withCredentials: true}
+Vue.http.options.xhr = {
+  withCredentials: true
+}
 Vue.http.options.emulateJSON = true
 Vue.config.devtools = false
 
 /* eslint-disable no-new */
 const eventHub = new Vue({
-  el    : '#app',
+  el: '#app',
   render: h => h(App)
 })
