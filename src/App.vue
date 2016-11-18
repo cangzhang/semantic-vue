@@ -1,35 +1,47 @@
 <template>
-<div id="app"> <img class="logo" src="./assets/logo.png">
+<div id="app">
+  <img class="logo" src="./assets/logo.png">
   <hello></hello>
-  <login-modal:display="display" ref="sModal"></login-modal>
-    <button class="ui primary button" @click="openModal">
+  <login-modal :display="display" ref="sModal"></login-modal>
+  <button class="ui primary button" @click="openModal">
     OPEN Modal
   </button>
-    <!--<login-dialog></login-dialog>-->
-    <!--<semantic-component></semantic-component>-->
+  <sem-overlay :showOverlay="overlayShow"></sem-overlay>
 </div>
 </template>
 
 <script>
 import Hello from './components/Hello'
-import LoginModal from './components/LoginModal.vue'
-//  import LoginDialog from './components/LoginDialog'
-//  import SemanticComponent from './components/SemanticComponent.vue'
+import LoginModal from './components/LoginModal'
+import SemOverlay from './components/overlay'
+
 export default {
   components: {
     Hello,
-    LoginModal
+    LoginModal,
+    SemOverlay
     //      LoginDialog,
     //      SemanticComponent,
   },
   data() {
     return {
-      display: false
+      display: false,
+      overlayShow: false
     }
   },
   methods: {
     openModal() {
       this.display = !this.display
+    }
+  },
+  events: {
+    showOverlay() {
+      console.log('showOverlay')
+      this.overlayShow = true
+    },
+    hideOverlay(){
+      console.log('hideOverlay')
+      this.overlayShow = false
     }
   }
 }
