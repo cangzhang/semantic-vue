@@ -1,9 +1,17 @@
 import Vue from 'vue'
-import OverlayTpl from './overlay'
+import OverlayOpt from '../overlay'
 
-const Overlay = Vue.extend(OverlayTpl)
+const Overlay = Vue.extend(OverlayOpt)
 
-const PopupManager = {
-  instances: [],
-  overlay: false
+export default {
+  showOverlay() {
+    let overlay = this.overlay = new Overlay({
+      el: document.createElement('div')
+    })
+    document.body.appendChild(overlay.$el)
+    console.log('overlay')
+    Vue.nextTick(() => {
+      overlay.showOverlay = true
+    })
+  }
 }

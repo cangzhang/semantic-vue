@@ -1,11 +1,10 @@
 <template>
-<div class="sem-overlay" v-if="showOverlay" @click="handleClick" @touchmove="prevent" :style="style">
-</div>
+<div class="sv-overlay" v-if="showOverlay"></div>
 </template>
 
 <script>
 export default {
-  name: 'semOverlay',
+  name: 'svOverlay',
   props: {
     showOverlay: {
       type: Boolean,
@@ -15,9 +14,9 @@ export default {
       type: Boolean,
       default: false
     },
-    onClick: {
-      type: Function
-    },
+    // onClick: {
+    //   type: Function
+    // },
     opacity: {
       type: Number,
       default: 0.4
@@ -55,7 +54,7 @@ export default {
 </script>
 
 <style lang="css">
-.sem-overlay {
+.sv-overlay {
   position: absolute;
   left: 0;
   right: 0;
