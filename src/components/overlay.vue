@@ -19,7 +19,7 @@ export default {
     // },
     opacity: {
       type: Number,
-      default: 0.4
+      default: 0.6
     },
     color: {
       type: String,
