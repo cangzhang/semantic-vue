@@ -1,6 +1,6 @@
 <template>
 <div class="login-modal">
-  <div class="ui modal sv-modal" v-if="show" :class="{'isVisible': show}">
+  <div class="ui modal sv-modal" v-if="switchF" :class="{'isVisible': show}">
     <i class="close icon"></i>
     <div class="header centered ui grid three column">
       <div class="ui buttons centered column">
@@ -51,7 +51,7 @@
       </form>
     </div>
     <div class="actions">
-      <div class="ui black deny button" @click="cancel()">
+      <div class="ui black deny button" @click="close()">
         <i class="remove icon"></i> Cancel
       </div>
       <div class="ui positive button" @click="confirm()">
@@ -74,16 +74,17 @@ export default {
       resolve: '',
       reject: '',
       promise: '',
-      status: 'login'
+      status: 'login',
+      closeDialog: false
     }
   },
   methods: {
     changeStatus(param) {
       this.status = !!param ? 'signUp' : 'login'
     },
-    cancel() {
-      console.info('close')
-      this.show = false
+    close() {
+      OverlayManager.hideOverlay()
+      this.closeDialog = true
     },
     confirm() {
       this.show = false
@@ -100,18 +101,30 @@ export default {
   computed: {
     show() {
       if (this.display) {
-        OverlayManager.showOverlay()
-        return this.display
+        return true
+      }
+    },
+    switchF() {
+      if (this.closeDialog) {
+        this.closeDialog = false
+        return false
+      } else {
+        if (this.show) {
+          this.closeDialog = false
+          OverlayManager.showOverlay()
+          return true
+        }
       }
     }
   },
   watch: {
-    // display() {
-    //   this.show = true
-    // },
-    show(newVal, oldVal) {
-      console.log('show before ', oldVal)
-      console.log('show after ', newVal)
+    closeDialog(newVal, oldVal) {
+      console.log('close old ', oldVal)
+      console.log('close new ', newVal)
+    },
+    show(n, o) {
+      console.log('show new ', n)
+      console.log('show old ', o)
     }
   }
 }
