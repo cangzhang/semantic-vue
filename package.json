@@ -12,7 +12,6 @@
     "element-ui": "^1.0.0-rc.5",
     "jquery": "^3.1.1",
     "semantic-ui": "^2.2.4",
-    "semantic-ui-css": "^2.2.4",
     "vue": "^2.0.1",
     "vue-resource": "^1.0.3"
   },
