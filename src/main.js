@@ -4,16 +4,18 @@
 import jquery from "jquery"
 import Vue from 'vue'
 import VueResource from 'vue-resource'
+import Vuex from 'vuex'
 // import semantic from 'semantic-ui/dist/semantic.js'
 
 import 'semantic-ui/dist/semantic.css'
 
 import App from './App'
 
-Vue.use(VueResource)
-
 window.$ = jquery
 window.jQuery = jquery
+
+Vue.use(VueResource)
+Vue.use(Vuex)
 
 Vue.http.options.xhr = {
   withCredentials: true
@@ -21,8 +23,18 @@ Vue.http.options.xhr = {
 Vue.http.options.emulateJSON = true
 Vue.config.devtools = false
 
+const store = new Vuex.Store({
+  state: {
+    loginModalStatus: false
+  },
+  mutations: {
+    switchModalStatus: state => state.loginModalStatus = !state.loginModalStatus
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   render: h => h(App)
 })

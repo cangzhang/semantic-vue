@@ -1,6 +1,6 @@
 <template>
 <div class="login-modal">
-  <div class="ui modal sv-modal" v-if="switchF" :class="{'isVisible': show}">
+  <div class="ui modal sv-modal" v-show="show" :class="{'isVisible': show}">
     <i class="close icon"></i>
     <div class="header centered ui grid three column">
       <div class="ui buttons centered column">
@@ -83,11 +83,11 @@ export default {
       this.status = !!param ? 'signUp' : 'login'
     },
     close() {
-      OverlayManager.hideOverlay()
-      this.closeDialog = true
+      this.$store.commit('switchModalStatus')
+    //   OverlayManager.hideOverlay()
     },
     confirm() {
-      this.show = false
+      this.$store.commit('switchModalStatus')
       this.promise = new Promise((resolve, reject) => {
         this.resolve = resolve;
         this.reject = reject;
@@ -100,31 +100,7 @@ export default {
   },
   computed: {
     show() {
-      if (this.display) {
-        return true
-      }
-    },
-    switchF() {
-      if (this.closeDialog) {
-        this.closeDialog = false
-        return false
-      } else {
-        if (this.show) {
-          this.closeDialog = false
-          OverlayManager.showOverlay()
-          return true
-        }
-      }
-    }
-  },
-  watch: {
-    closeDialog(newVal, oldVal) {
-      console.log('close old ', oldVal)
-      console.log('close new ', newVal)
-    },
-    show(n, o) {
-      console.log('show new ', n)
-      console.log('show old ', o)
+      return this.display
     }
   }
 }

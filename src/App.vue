@@ -17,17 +17,18 @@ export default {
   components: {
     Hello,
     LoginModal
-    //      LoginDialog,
-    //      SemanticComponent,
+  },
+  computed: {
+    display() {
+      return this.$store.state.loginModalStatus
+    }
   },
   data() {
-    return {
-      display: false
-    }
+    return {}
   },
   methods: {
     openModal() {
-      this.display = !this.display
+      this.$store.commit('switchModalStatus')
     }
   }
 }
