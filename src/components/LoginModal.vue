@@ -1,7 +1,7 @@
 <template>
 <div class="login-modal">
   <div class="ui modal sv-modal" v-show="show" :class="{'isVisible': show}">
-    <i class="close icon"></i>
+    <i class="close icon" @click="close()"></i>
     <div class="header centered ui grid three column">
       <div class="ui buttons centered column">
         <button class="ui button" @click="changeStatus()" :class="{ 'positive': isLogin() }">
@@ -19,13 +19,13 @@
             <div class="ui teal label">
               USERNAME
             </div>
-            <input type="text" placeholder="username">
+            <input type="text" placeholder="username" v-model="loginInfo.username">
           </div>
           <div class="ui labeled input">
             <div class="ui teal label">
               PASSWORD
             </div>
-            <input type="password" placeholder="password">
+            <input type="password" placeholder="password" v-model="loginInfo.password">
           </div>
         </div>
         <div class="signUpArea column" v-else>
@@ -33,19 +33,19 @@
             <div class="ui teal label">
               USERNAME
             </div>
-            <input type="text" placeholder="username">
+            <input type="text" placeholder="username" v-model="regInfo.username">
           </div>
           <div class="ui labeled input">
             <div class="ui teal label">
               EMAIL
             </div>
-            <input type="email" placeholder="email">
+            <input type="email" placeholder="email" v-model="regInfo.email">
           </div>
           <div class="ui labeled input">
             <div class="ui teal label">
               PASSWORD
             </div>
-            <input type="password" placeholder="password">
+            <input type="password" placeholder="password" v-model="regInfo.password">
           </div>
         </div>
       </form>
@@ -64,9 +64,11 @@
 
 <script>
 import OverlayManager from './mixins/manager'
+import UserControl from './mixins/userControl'
+
 export default {
   name: 'sv-modal',
-  mixins: [OverlayManager],
+  mixins: [OverlayManager, UserControl],
   props: ['display'],
   data() {
     return {
@@ -75,7 +77,15 @@ export default {
       reject: '',
       promise: '',
       status: 'login',
-      closeDialog: false
+      loginInfo: {
+        username: '',
+        password: ''
+      },
+      regInfo: {
+        username: '',
+        password: '',
+        email: ''
+      }
     }
   },
   methods: {
@@ -87,6 +97,10 @@ export default {
     //   OverlayManager.hideOverlay()
     },
     confirm() {
+      UserControl.login(this.loginInfo)
+      .then(response=>{
+        console.log(response);
+      })
       this.$store.commit('switchModalStatus')
       this.promise = new Promise((resolve, reject) => {
         this.resolve = resolve;
