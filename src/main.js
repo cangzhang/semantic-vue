@@ -7,7 +7,7 @@ import VueResource from 'vue-resource'
 import Vuex from 'vuex'
 // import semantic from 'semantic-ui/dist/semantic.js'
 
-import 'semantic-ui/dist/semantic.css'
+import 'semantic-ui-css/semantic.css'
 
 import App from './App'
 
