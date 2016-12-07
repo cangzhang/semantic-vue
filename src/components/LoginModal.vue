@@ -64,11 +64,10 @@
 
 <script>
 import OverlayManager from './mixins/manager'
-import UserControl from './mixins/userControl'
 
 export default {
   name: 'sv-modal',
-  mixins: [OverlayManager, UserControl],
+  mixins: [OverlayManager],
   props: ['display'],
   data() {
     return {
@@ -94,19 +93,14 @@ export default {
     },
     close() {
       this.$store.commit('switchModalStatus')
-    //   OverlayManager.hideOverlay()
+        //   OverlayManager.hideOverlay()
     },
     confirm() {
-      UserControl.login(this.loginInfo)
-      .then(response=>{
-        console.log(response);
-      })
-      this.$store.commit('switchModalStatus')
-      this.promise = new Promise((resolve, reject) => {
-        this.resolve = resolve;
-        this.reject = reject;
-      });
-      return this.promise;
+      if(this.isLogin()) {
+      this.$store.dispatch('login', this.loginInfo)
+    } else {
+      this.$store.dispatch('registerUser', this.regInfo)
+    }
     },
     isLogin() {
       return this.status === 'login'

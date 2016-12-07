@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     display() {
-      return this.$store.state.loginModalStatus
+      return this.$store.state.UserControl.loginModalStatus
     }
   },
   data() {
