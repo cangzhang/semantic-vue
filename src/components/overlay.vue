@@ -1,5 +1,6 @@
 <template>
-<div class="sv-overlay" v-if="showOverlay"></div>
+<div class="sv-overlay" v-if="showOverlay">
+</div>
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
-<div class="login-modal">
-  <div class="ui modal sv-modal" v-show="show" :class="{'isVisible': show}">
+<div class="login-modal" transition="modalTransition">
+  <div class="ui modal sv-modal" v-if="show" :class="{'isVisible': show}">
     <i class="close icon" @click="close()"></i>
     <div class="header centered ui grid three column">
       <div class="ui buttons centered column">
@@ -96,11 +96,22 @@ export default {
         //   OverlayManager.hideOverlay()
     },
     confirm() {
-      if(this.isLogin()) {
-      this.$store.dispatch('login', this.loginInfo)
-    } else {
-      this.$store.dispatch('registerUser', this.regInfo)
-    }
+      if (this.isLogin()) {
+        this.$store.dispatch('login', this.loginInfo).then((response) => {
+          let localToken = response.body.token
+          localStorage.setItem('VulaToken', localToken)
+          this.$store.commit('switchModalStatus')
+        }, (response) => {
+          alert(response.body.errors.message)
+        })
+      } else {
+        this.$store.dispatch('registerUser', this.regInfo).then((response) => {
+          console.log(response.body)
+          this.$store.commit('switchModalStatus')
+        }, (response) => {
+          alert(response.body.errors.message)
+        })
+      }
     },
     isLogin() {
       return this.status === 'login'
@@ -118,5 +129,14 @@ export default {
 .isVisible {
   display: block;
   top: 35%
+}
+
+.modalTransition-transition {
+  transition: all 1s ease;
+}
+
+.modalTransition-enter,
+.modalTransition-leave {
+  top: -100px;
 }
 </style>

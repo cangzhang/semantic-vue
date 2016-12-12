@@ -1,6 +1,6 @@
 <template>
 <div id="app">
-  <img class="logo" src="./assets/logo.png">
+  <!-- <img class="logo" src="./assets/logo.png"> -->
   <hello></hello>
   <login-modal :display="display" ref="semModal"></login-modal>
   <button class="ui primary button" @click="openModal">

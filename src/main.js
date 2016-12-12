@@ -14,7 +14,9 @@ import App from './App'
 window.$ = jquery
 window.jQuery = jquery
 
-let localToken = localStorage.getItem('localToken') ? localStorage.getItem('localToken') : '';
+let localToken = localStorage.getItem('localToken')
+  ? localStorage.getItem('localToken')
+  : '';
 
 Vue.use(VueResource)
 Vue.use(Vuex)
@@ -33,7 +35,9 @@ const UserControlModule = {
     loginModalStatus: false
   },
   mutations: {
-    switchModalStatus: state => state.loginModalStatus = !state.loginModalStatus
+    switchModalStatus: state => {
+      state.loginModalStatus = !state.loginModalStatus
+    }
   },
   actions: {
     registerUser({
@@ -41,23 +45,12 @@ const UserControlModule = {
       state
     }, userInfo) {
       return Vue.http.post('register', userInfo)
-        .then((response) => {
-          console.log(response.body)
-          commit('switchModalStatus')
-        }, (response) => {})
     },
     login({
       commit,
       state
     }, userInfo) {
       return Vue.http.post('login', userInfo)
-        .then((response) => {
-          let localToken = response.body.token
-          localStorage.setItem('VulaToken', localToken)
-          commit('switchModalStatus')
-        }, (response) => {
-          console.log(response.body.errors.message)
-        })
     }
   }
 }
