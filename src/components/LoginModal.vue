@@ -1,64 +1,66 @@
 <template>
-<div class="login-modal" transition="modalTransition">
-  <div class="ui modal sv-modal" v-if="show" :class="{'isVisible': show}">
-    <i class="close icon" @click="close()"></i>
-    <div class="header centered ui grid three column">
-      <div class="ui buttons centered column">
-        <button class="ui button" @click="changeStatus()" :class="{ 'positive': isLogin() }">
+<div class="login-modal">
+  <transition name="slide-fade">
+    <div class="ui modal sv-modal" v-if="show" :class="{'isVisible': show}">
+      <i class="close icon" @click="close()"></i>
+      <div class="header centered ui grid three column">
+        <div class="ui buttons centered column">
+          <button class="ui button" @click="changeStatus()" :class="{ 'positive': isLogin() }">
           Login
         </button>
-        <button class="ui button" @click="changeStatus(1)" :class="{ 'positive': !isLogin() }">
+          <button class="ui button" @click="changeStatus(1)" :class="{ 'positive': !isLogin() }">
           Sign Up
         </button>
-      </div>
-    </div>
-    <div class="content">
-      <form class="loginForm ui grid three column centered">
-        <div class="loginArea column" v-if="isLogin()">
-          <div class="ui labeled input">
-            <div class="ui teal label">
-              USERNAME
-            </div>
-            <input type="text" placeholder="username" v-model="loginInfo.username">
-          </div>
-          <div class="ui labeled input">
-            <div class="ui teal label">
-              PASSWORD
-            </div>
-            <input type="password" placeholder="password" v-model="loginInfo.password">
-          </div>
         </div>
-        <div class="signUpArea column" v-else>
-          <div class="ui labeled input">
-            <div class="ui teal label">
-              USERNAME
+      </div>
+      <div class="content">
+        <form class="loginForm ui grid three column centered">
+          <div class="loginArea column" v-if="isLogin()">
+            <div class="ui labeled input">
+              <div class="ui teal label">
+                USERNAME
+              </div>
+              <input type="text" placeholder="username" v-model="loginInfo.username">
             </div>
-            <input type="text" placeholder="username" v-model="regInfo.username">
-          </div>
-          <div class="ui labeled input">
-            <div class="ui teal label">
-              EMAIL
+            <div class="ui labeled input">
+              <div class="ui teal label">
+                PASSWORD
+              </div>
+              <input type="password" placeholder="password" v-model="loginInfo.password">
             </div>
-            <input type="email" placeholder="email" v-model="regInfo.email">
           </div>
-          <div class="ui labeled input">
-            <div class="ui teal label">
-              PASSWORD
+          <div class="signUpArea column" v-else>
+            <div class="ui labeled input">
+              <div class="ui teal label">
+                USERNAME
+              </div>
+              <input type="text" placeholder="username" v-model="regInfo.username">
             </div>
-            <input type="password" placeholder="password" v-model="regInfo.password">
+            <div class="ui labeled input">
+              <div class="ui teal label">
+                EMAIL
+              </div>
+              <input type="email" placeholder="email" v-model="regInfo.email">
+            </div>
+            <div class="ui labeled input">
+              <div class="ui teal label">
+                PASSWORD
+              </div>
+              <input type="password" placeholder="password" v-model="regInfo.password">
+            </div>
           </div>
+        </form>
+      </div>
+      <div class="actions">
+        <div class="ui black deny button" @click="close()">
+          <i class="remove icon"></i> Cancel
         </div>
-      </form>
-    </div>
-    <div class="actions">
-      <div class="ui black deny button" @click="close()">
-        <i class="remove icon"></i> Cancel
-      </div>
-      <div class="ui positive button" @click="confirm()">
-        <i class="checkmark icon"></i> {{ isLogin() ? 'Login' : 'Sign Up' }}
+        <div class="ui positive button" @click="confirm()">
+          <i class="checkmark icon"></i> {{ isLogin() ? 'Login' : 'Sign Up' }}
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </div>
 </template>
 
@@ -102,7 +104,7 @@ export default {
           localStorage.setItem('VulaToken', localToken)
           this.$store.commit('switchModalStatus')
         }, (response) => {
-          alert(response.body.errors.message)
+          OverlayManager.showToast(response.body.errors.message)
         })
       } else {
         this.$store.dispatch('registerUser', this.regInfo).then((response) => {
@@ -131,12 +133,14 @@ export default {
   top: 35%
 }
 
-.modalTransition-transition {
-  transition: all 1s ease;
+.slide-fade-enter-active {
+  transition: all .3s ease;
 }
-
-.modalTransition-enter,
-.modalTransition-leave {
-  top: -100px;
+.slide-fade-leave-active {
+  transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-active {
+  transform: translateX(10px);
+  opacity: 0;
 }
 </style>
