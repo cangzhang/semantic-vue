@@ -1,23 +1,21 @@
 <template>
-<div class="hello">
-  <div class="aaa"></div>
-  <h2>{{ msg }}</h2>
-</div>
+    <div class="hello">
+        <div class="aaa"></div>
+        <h2>{{ msg }}</h2>
+    </div>
 </template>
-
 <script>
 export default {
-  data() {
-    return {
-      msg: 'Hello!'
+    data() {
+        return {
+            msg: 'Hello!'
+        }
     }
-  }
 }
 </script>
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h2 {
-  color: #42b983;
+    color: #42b983;
 }
 </style>
