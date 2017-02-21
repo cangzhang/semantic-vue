@@ -1,5 +1,13 @@
 <template>
-  <button :class="btnPreference">{{ msg }}</button>
+  <button class="ui button"
+          :class="[
+            type ? type : ''
+          ]"
+          :disabled="disabled"
+          :type="type"
+          @click="handleClick">
+    <slot></slot>
+  </button>
 </template>
 
 <script>
@@ -7,24 +15,38 @@
 
   export default {
     name    : 'sv-button',
+    props   : {
+      type    : {
+        type   : String,
+        default: ''
+      },
+      disabled: Boolean
+    },
     data () {
       return {
         msg: 'semantic button'
       }
     },
     computed: {
-      btnPreference() {
+      nativeBtnType() {
+        console.log(this.type)
+        return this.type
+      },
+      btnClass() {
         return {
-          ui     : true,
-          button : true,
-          primary: true
+          ui    : true,
+          button: true
         }
+      }
+    },
+    methods : {
+      handleClick(ev) {
+        this.$emit('click', ev);
       }
     }
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
 </style>

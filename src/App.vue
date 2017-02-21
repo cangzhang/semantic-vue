@@ -2,8 +2,9 @@
   <div id="app">
     <img src="./assets/logo.png">
     <div>
-      <button @click="windowAlert()">Click Me</button>
-      <sv-button></sv-button>
+      <sv-button type="primary" @click="windowAlert('primary')">{{ msg }}</sv-button>
+      <sv-button type="secondary" @click="windowAlert('secondary')">{{ msg }}</sv-button>
+      <sv-button @click="windowAlert('normal')">{{ msg }}</sv-button>
     </div>
   </div>
 </template>
@@ -14,9 +15,14 @@
     components: {
       svButton
     },
+    data() {
+      return {
+        msg: 'Button Text'
+      }
+    },
     methods   : {
-      windowAlert() {
-        alert('1')
+      windowAlert(text) {
+        alert(text)
       }
     }
   }
