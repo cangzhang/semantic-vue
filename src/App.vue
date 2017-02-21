@@ -1,14 +1,20 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <!-- <router-view></router-view> -->
-    <button @click="windowAlert()">Click Me</button>
+    <div>
+      <button @click="windowAlert()">Click Me</button>
+      <sv-button></sv-button>
+    </div>
   </div>
 </template>
 <script>
+  import svButton from './components/button.vue'
   export default {
-    name   : 'app',
-    methods: {
+    name      : 'app',
+    components: {
+      svButton
+    },
+    methods   : {
       windowAlert() {
         alert('1')
       }
