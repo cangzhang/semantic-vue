@@ -5,7 +5,9 @@
           ]"
           :disabled="disabled"
           :type="type"
+          :autofocus="autofocus"
           @click="handleClick">
+    <i class="icon" :class="icon" v-if="!!icon"></i>
     <slot></slot>
   </button>
 </template>
@@ -16,11 +18,16 @@
   export default {
     name    : 'sv-button',
     props   : {
-      type    : {
+      type     : {
         type   : String,
         default: ''
       },
-      disabled: Boolean
+      disabled : Boolean,
+      autofocus: Boolean,
+      icon     : {
+        type   : String,
+        default: ''
+      }
     },
     data () {
       return {
@@ -28,10 +35,6 @@
       }
     },
     computed: {
-      nativeBtnType() {
-        console.log(this.type)
-        return this.type
-      },
       btnClass() {
         return {
           ui    : true,
@@ -47,6 +50,6 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+  @import 'node_modules/semantic-ui-sass/app/assets/stylesheets/semantic-ui/elements/_icon';
 </style>

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.2",
     "semantic-ui-css": "^2.2.8",
     "semantic-ui-sass": "^2.1.7",
     "vue": "^2.1.10",
