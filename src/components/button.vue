@@ -1,20 +1,16 @@
 <template>
   <button class="ui button"
-          :class="[
-            type ? type : ''
-          ]"
+          :class="[type ? type : '']"
           :disabled="disabled"
           :type="type"
           :autofocus="autofocus"
           @click="handleClick">
-    <i class="icon" :class="icon" v-if="!!icon"></i>
+    <i :class="icon" class="icon" v-if="!!icon"></i>
     <slot></slot>
   </button>
 </template>
 
 <script>
-  import 'semantic-ui-css/components/button.css'
-
   export default {
     name    : 'sv-button',
     props   : {
@@ -50,6 +46,5 @@
   }
 </script>
 
-<style lang="scss" scoped>
-  @import 'node_modules/semantic-ui-sass/app/assets/stylesheets/semantic-ui/elements/_icon';
+<style lang="scss">
 </style>
