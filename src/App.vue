@@ -17,7 +17,7 @@
     <br>
     <div>
       <sv-button type="basic" icon="user" @click="windowAlert('basic')">{{ msg }}</sv-button>
-      <sv-button type="basic">{{ msg }}</sv-button>
+      <sv-button type="basic" :tabindex="0">{{ msg }}</sv-button>
       <sv-button type="basic" theme="black">{{ msg }}</sv-button>
     </div>
   </div>

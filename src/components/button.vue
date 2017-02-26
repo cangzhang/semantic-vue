@@ -12,6 +12,7 @@
           :disabled="disabled"
           :type="type"
           :autofocus="autofocus"
+          :tabindex="tabIndex"
           @click="handleClick">
     <i :class="icon" class="icon" v-if="!!icon"></i>
     <slot></slot>
@@ -28,6 +29,7 @@
         default: true
       },
       theme    : String,
+      tabIndex : Number,
       type     : {
         type   : String,
         default: ''
