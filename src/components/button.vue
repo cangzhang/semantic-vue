@@ -1,6 +1,14 @@
 <template>
-  <button class="ui button"
-          :class="[type ? type : '']"
+  <button class="ui"
+          :class="[
+            theme ? theme : '',
+            right ? 'right' : 'left',
+            {
+              labeled: labeled,
+              button : button
+            },
+            type ? type : '',
+          ]"
           :disabled="disabled"
           :type="type"
           :autofocus="autofocus"
@@ -11,9 +19,15 @@
 </template>
 
 <script>
+  //TODO: labeled button
   export default {
     name    : 'sv-button',
     props   : {
+      button   : {
+        type   : Boolean,
+        default: true
+      },
+      theme    : String,
       type     : {
         type   : String,
         default: ''
@@ -23,19 +37,14 @@
       icon     : {
         type   : String,
         default: ''
-      }
-    },
-    data () {
-      return {
-        msg: 'semantic button'
-      }
-    },
-    computed: {
-      btnClass() {
-        return {
-          ui    : true,
-          button: true
-        }
+      },
+      labeled  : {
+        type   : Boolean,
+        default: false
+      },
+      right    : {
+        type   : Boolean,
+        default: false
       }
     },
     methods : {
