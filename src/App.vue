@@ -11,23 +11,33 @@
     <br>
     <div>
       <sv-button type="icon" icon="cloud" @click="windowAlert('icon')"></sv-button>
-      <sv-button type="icon" :labeled="true" icon="arrow left">{{ msg }}</sv-button>
-      <sv-button type="icon" :labeled="true" :right="true" icon="arrow right">{{ msg }}</sv-button>
+      <sv-button type="icon" :labeled-icon="true" icon="arrow left">{{ msg }}</sv-button>
+      <sv-button type="icon" :labeled-icon="true" :right="true" icon="arrow right">{{ msg }}</sv-button>
     </div>
     <br>
     <div>
       <sv-button type="basic" icon="user" @click="windowAlert('basic')">{{ msg }}</sv-button>
-      <sv-button type="basic" :tabindex="0">{{ msg }}</sv-button>
+      <sv-button type="basic" theme="teal" :tabindex="0" @click="windowAlert('tab-index')">{{ msg }}</sv-button>
       <sv-button type="basic" theme="black">{{ msg }}</sv-button>
+    </div>
+    <br>
+    <div>
+      <sv-labeled-button type="basic" icon="heart" label-text="Like">{{ msg }}</sv-labeled-button>
+      <sv-labeled-button type="basic" icon="heart" label-text="Like" pointing="right">{{ msg }}</sv-labeled-button>
+      <sv-labeled-button type="basic" icon="heart" :right="true" label-text="Like" pointing="left">{{ msg }}
+      </sv-labeled-button>
     </div>
   </div>
 </template>
+
 <script>
   import svButton from './components/button.vue'
+  import svLabeledButton from './components/labeled-button.vue'
   export default {
     name      : 'app',
     components: {
-      svButton
+      svButton,
+      svLabeledButton
     },
     data() {
       return {
@@ -41,6 +51,7 @@
     }
   }
 </script>
+
 <style lang="scss">
   #app {
     -webkit-font-smoothing: antialiased;

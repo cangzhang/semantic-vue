@@ -1,18 +1,18 @@
 <template>
   <button class="ui"
           :class="[
-            theme ? theme : '',
+            theme,
             right ? 'right' : 'left',
             {
-              labeled: labeled,
-              button : button
+              labeled: labeledIcon,
+              button : 'button'
             },
-            type ? type : '',
+            type,
           ]"
           :disabled="disabled"
           :type="type"
           :autofocus="autofocus"
-          :tabindex="tabIndex"
+          :tabindex="tabindex"
           @click="handleClick">
     <i :class="icon" class="icon" v-if="!!icon"></i>
     <slot></slot>
@@ -20,36 +20,19 @@
 </template>
 
 <script>
-  //TODO: labeled button
   export default {
-    name    : 'sv-button',
-    props   : {
-      button   : {
-        type   : Boolean,
-        default: true
-      },
-      theme    : String,
-      tabIndex : Number,
-      type     : {
-        type   : String,
-        default: ''
-      },
-      disabled : Boolean,
-      autofocus: Boolean,
-      icon     : {
-        type   : String,
-        default: ''
-      },
-      labeled  : {
-        type   : Boolean,
-        default: false
-      },
-      right    : {
-        type   : Boolean,
-        default: false
-      }
+    name   : 'sv-button',
+    props  : {
+      theme      : String,
+      tabindex   : Number,
+      type       : String,
+      disabled   : Boolean,
+      autofocus  : Boolean,
+      icon       : String,
+      labeledIcon: Boolean,
+      right      : Boolean
     },
-    methods : {
+    methods: {
       handleClick(ev) {
         this.$emit('click', ev);
       }
@@ -57,5 +40,4 @@
   }
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>
