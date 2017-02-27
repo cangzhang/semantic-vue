@@ -24,7 +24,7 @@
     <div>
       <sv-labeled-button type="basic" icon="heart" label-text="Like">{{ msg }}</sv-labeled-button>
       <sv-labeled-button type="basic" icon="heart" label-text="Like" pointing="right">{{ msg }}</sv-labeled-button>
-      <sv-labeled-button type="basic" icon="heart" :right="true" label-text="Like" pointing="left">{{ msg }}
+      <sv-labeled-button icon="heart" theme="red" :right="true" label-text="Like" pointing="left">{{ msg }}
       </sv-labeled-button>
     </div>
   </div>

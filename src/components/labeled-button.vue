@@ -2,7 +2,7 @@
   <div v-if="right" class="ui right labeled button"
        @click="handleClick"
        :tabindex="tabindex">
-    <div class="ui button">
+    <div class="ui" :class="[theme, {button : 'button'}]">
       <i :class="icon" class="icon"></i>
       {{ labelText }}
     </div>
@@ -46,6 +46,7 @@
         type   : Number,
         default: 0
       },
+      theme    : String,
       icon     : String,
       right    : Boolean,
       type     : String,
@@ -54,15 +55,13 @@
     },
     computed: {
       pointingTo: function () {
-        console.log(this.pointing)
         const v = ['', 'below'], h = ['left', 'right']
         if (v.indexOf(this.pointing) >= 0) {
           return 'pointing ' + this.pointing
         } else if (h.indexOf(this.pointing) >= 0) {
           return this.pointing + ' pointing'
-        } else {
-          return ''
         }
+        return ''
       }
     },
     methods : {
