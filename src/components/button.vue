@@ -30,7 +30,8 @@
       autofocus  : Boolean,
       icon       : String,
       labeledIcon: Boolean,
-      right      : Boolean
+      right      : Boolean,
+      animated   : String
     },
     methods: {
       handleClick(ev) {

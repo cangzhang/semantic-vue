@@ -11,7 +11,6 @@
          type,
          pointingTo,
          {
-           pointing: pointingTo,
            label: 'label'
          }
        ]">
@@ -55,10 +54,8 @@
     },
     computed: {
       pointingTo: function () {
-        const v = ['', 'below'], h = ['left', 'right']
-        if (v.indexOf(this.pointing) >= 0) {
-          return 'pointing ' + this.pointing
-        } else if (h.indexOf(this.pointing) >= 0) {
+        const direction = ['left', 'right']
+        if (direction.indexOf(this.pointing) >= 0) {
           return this.pointing + ' pointing'
         }
         return ''
