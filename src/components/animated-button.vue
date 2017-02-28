@@ -6,6 +6,7 @@
            button: 'button'
          }
        ]"
+       @click="handleClick"
        :tabindex="tabindex">
     <div class="visible content">
       <slot></slot>
@@ -20,12 +21,17 @@
 <script>
   //TODO
   export default {
-    name : 'sv-animated-button',
-    props: {
+    name   : 'sv-animated-button',
+    props  : {
       tabindex  : Number,
       hiddenText: String,
       icon      : String,
       animate   : String
+    },
+    methods: {
+      handleClick(ev) {
+        this.$emit('click', ev);
+      }
     }
   }
 </script>
