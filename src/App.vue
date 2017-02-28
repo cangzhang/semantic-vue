@@ -31,6 +31,7 @@
     <div>
       <sv-animated-button icon="shop" hiddenText="Cart" animate="">{{ msg }}</sv-animated-button>
       <sv-animated-button animate="vertical" icon="shop" hiddenText="Cart">{{ msg }}</sv-animated-button>
+      <sv-animated-button animate="fade" icon="shop" hiddenText="Cart">{{ msg }}</sv-animated-button>
     </div>
     <br>
     <div>
@@ -55,10 +56,10 @@
 </template>
 
 <script>
-  import svButton from './components/button.vue'
-  import svLabeledButton from './components/labeled-button.vue'
-  import svAnimatedButton from './components/animated-button.vue'
-  import svButtonGroup from './components/button-group.vue'
+  import * as svButton from './components/button.vue'
+  import * as svLabeledButton from './components/labeled-button.vue'
+  import * as svAnimatedButton from './components/animated-button.vue'
+  import * as svButtonGroup from './components/button-group.vue'
 
   export default {
     name      : 'app',
