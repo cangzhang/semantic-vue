@@ -2,11 +2,19 @@
   <div id="app">
     <img src="./assets/logo.png">
     <div>
-      <sv-button @click="windowAlert('normal')">{{ msg }}</sv-button>
-      <sv-button type="primary" @click="windowAlert('primary')">{{ msg }}</sv-button>
-      <sv-button type="secondary" @click="windowAlert('secondary')">{{ msg }}</sv-button>
-      <sv-button type="positive" @click="windowAlert('secondary')">{{ msg }}</sv-button>
-      <sv-button type="negative" @click="windowAlert('secondary')">{{ msg }}</sv-button>
+      <div>
+        <sv-button @click="windowAlert('normal')">{{ msg }}</sv-button>
+        <sv-button theme="twitter">{{ msg }}</sv-button>
+        <sv-button :active="true" @click="windowAlert('active')">{{ msg }}</sv-button>
+        <sv-button :disabled="true" @click="windowAlert('active')">{{ msg }}</sv-button>
+      </div>
+      <br>
+      <div>
+        <sv-button type="primary" @click="windowAlert('primary')">{{ msg }}</sv-button>
+        <sv-button type="secondary" @click="windowAlert('secondary')">{{ msg }}</sv-button>
+        <sv-button type="positive" @click="windowAlert('secondary')">{{ msg }}</sv-button>
+        <sv-button type="negative" @click="windowAlert('secondary')">{{ msg }}</sv-button>
+      </div>
     </div>
     <br>
     <div>

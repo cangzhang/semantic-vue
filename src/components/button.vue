@@ -1,16 +1,25 @@
 <template>
-  <button class="ui"
-          :class="[
+  <button :class="[
+            {
+              circular: circular,
+              fluid: fluid,
+              compact: compact,
+              size: size,
+              ui: 'ui',
+              toggle: toggle,
+            },
             theme,
+            verticallyAttached,
             right ? 'right' : 'left',
             {
+              active: active,
               labeled: labeledIcon,
-              button : 'button'
+              button: 'button',
+              disabled: disabled,
+              loading: loading
             },
             type,
           ]"
-          :disabled="disabled"
-          :type="type"
           :autofocus="autofocus"
           :tabindex="tabindex"
           @click="handleClick">
@@ -21,8 +30,8 @@
 
 <script>
   export default {
-    name   : 'sv-button',
-    props  : {
+    name    : 'sv-button',
+    props   : {
       theme      : String,
       tabindex   : Number,
       type       : String,
@@ -31,9 +40,24 @@
       icon       : String,
       labeledIcon: Boolean,
       right      : Boolean,
-      animated   : String
+      animated   : String,
+      loading    : String,
+      active     : Boolean,
+      fluid      : Boolean,
+      circular   : Boolean,
+      compact    : Boolean,
+      toggle     : Boolean,
+      size       : String,
+      attached   : String,
     },
-    methods: {
+    computed: {
+      verticallyAttached() {
+        if (typeof this.attached !== 'undefined') {
+          return this.attached + ' attached'
+        }
+      }
+    },
+    methods : {
       handleClick(ev) {
         this.$emit('click', ev);
       }
