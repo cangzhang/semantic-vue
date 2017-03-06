@@ -56,7 +56,7 @@
       </div>
       <br>
       <div>
-        <sv-button-group :icon="true">
+        <sv-button-group :icon-button="true">
           <sv-button type="icon" icon="cloud"></sv-button>
           <sv-button type="icon" icon="align left"></sv-button>
           <sv-button type="icon" icon="align center"></sv-button>

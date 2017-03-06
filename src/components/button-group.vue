@@ -5,7 +5,15 @@
     <slot></slot>
   </div>
 
-  <div v-else class="ui" :class="[{ icon: icon, buttons: true }]">
+  <div v-else :class="[
+          { basic: basic },
+          size? size : '',
+          { ui: true },
+          theme ? theme : '',
+          {
+            icon: iconButton,
+            buttons: true
+          }]">
     <slot></slot>
   </div>
 </template>
@@ -14,7 +22,10 @@
   export default {
     name : 'svButtonGroup',
     props: {
-      icon       : Boolean,
+      basic      : Boolean,
+      iconButton : Boolean,
+      size       : String,
+      theme      : String,
       conditional: {
         type   : Boolean,
         default: false
