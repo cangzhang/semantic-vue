@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <!--<img src="./assets/logo.png">-->
     <div>
       <div>
         <sv-button @click="windowAlert('normal')">{{ msg }}</sv-button>
@@ -37,9 +37,9 @@
     </div>
     <br>
     <div>
-      <sv-animated-button icon="shop" hiddenText="Cart" animate="">{{ msg }}</sv-animated-button>
-      <sv-animated-button animate="vertical" icon="shop" hiddenText="Cart">{{ msg }}</sv-animated-button>
-      <sv-animated-button animate="fade" icon="shop" hiddenText="Cart">{{ msg }}</sv-animated-button>
+      <sv-animated-button icon="shop" hidden-text="Cart" animate="">{{ msg }}</sv-animated-button>
+      <sv-animated-button animate="vertical" icon="shop" hidden-text="Cart">{{ msg }}</sv-animated-button>
+      <sv-animated-button animate="fade" icon="shop" hidden-text="Cart">{{ msg }}</sv-animated-button>
     </div>
     <br>
     <div>
