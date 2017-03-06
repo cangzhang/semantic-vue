@@ -2,7 +2,7 @@
   <div v-if="right" class="ui right labeled button"
        @click="handleClick"
        :tabindex="tabindex">
-    <div class="ui" :class="[theme, {button : 'button'}]">
+    <div class="ui" :class="[type, theme, {button : 'button'}]">
       <i :class="icon" class="icon"></i>
       {{ labelText }}
     </div>
@@ -12,7 +12,8 @@
          pointingTo,
          {
            label: 'label'
-         }
+         },
+         theme
        ]">
       <slot></slot>
     </a>
@@ -26,11 +27,12 @@
          pointingTo,
          {
            label: 'label'
-         }
+         },
+         theme
        ]">
       <slot></slot>
     </a>
-    <div class="ui button">
+    <div class="ui" :class="[theme, {button : 'button'}]">
       <i :class="icon" class="icon"></i>
       {{ labelText }}
     </div>
@@ -41,10 +43,7 @@
   export default {
     name    : 'sv-labeled-button',
     props   : {
-      tabindex : {
-        type   : Number,
-        default: 0
-      },
+      tabindex : Number,
       theme    : String,
       icon     : String,
       right    : Boolean,
