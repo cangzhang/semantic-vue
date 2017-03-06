@@ -45,22 +45,36 @@
     </div>
     <br>
     <div>
-      <sv-button-group>
-        <sv-button @click="windowAlert('normal')">{{ msg }}</sv-button>
-        <sv-button type="primary" @click="windowAlert('primary')">{{ msg }}</sv-button>
-        <sv-button type="secondary" @click="windowAlert('secondary')">{{ msg }}</sv-button>
-        <sv-button type="positive" @click="windowAlert('secondary')">{{ msg }}</sv-button>
-        <sv-button type="negative" @click="windowAlert('secondary')">{{ msg }}</sv-button>
-      </sv-button-group>
+      <div>
+        <sv-button-group>
+          <sv-button @click="windowAlert('normal')">{{ msg }}</sv-button>
+          <sv-button type="primary" @click="windowAlert('primary')">{{ msg }}</sv-button>
+          <sv-button type="secondary" @click="windowAlert('secondary')">{{ msg }}</sv-button>
+          <sv-button type="positive" @click="windowAlert('secondary')">{{ msg }}</sv-button>
+          <sv-button type="negative" @click="windowAlert('secondary')">{{ msg }}</sv-button>
+        </sv-button-group>
+      </div>
       <br>
+      <div>
+        <sv-button-group :icon="true">
+          <sv-button type="icon" icon="cloud"></sv-button>
+          <sv-button type="icon" icon="align left"></sv-button>
+          <sv-button type="icon" icon="align center"></sv-button>
+          <sv-button type="icon" icon="align right"></sv-button>
+          <sv-button type="icon" icon="align justify"></sv-button>
+        </sv-button-group>
+      </div>
       <br>
-      <sv-button-group :icon="true">
-        <sv-button type="icon" icon="cloud"></sv-button>
-        <sv-button type="icon" icon="align left"></sv-button>
-        <sv-button type="icon" icon="align center"></sv-button>
-        <sv-button type="icon" icon="align right"></sv-button>
-        <sv-button type="icon" icon="align justify"></sv-button>
-      </sv-button-group>
+      <div>
+        <sv-button-group :conditional="true">
+          <sv-button type="positive" slot="left" @click="windowAlert('left')">Left</sv-button>
+          <sv-button @click="windowAlert('right')">Right</sv-button>
+        </sv-button-group>
+        <sv-button-group :conditional="true" orText="ou">
+          <sv-button slot="left">left</sv-button>
+          <sv-button type="positive">Right</sv-button>
+        </sv-button-group>
+      </div>
     </div>
   </div>
 </template>
