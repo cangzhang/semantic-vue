@@ -8,7 +8,12 @@
         <sv-button :active="true" @click="windowAlert('active')">{{ msg }}</sv-button>
         <sv-button :disabled="true" @click="windowAlert('active')">{{ msg }}</sv-button>
       </div>
-      <br>
+      <sv-divider :horizontal="true">
+        <div>
+          <i class="tag icon"></i>
+          themed
+        </div>
+      </sv-divider>
       <div>
         <sv-button type="primary" @click="windowAlert('primary')">{{ msg }}</sv-button>
         <sv-button type="secondary" @click="windowAlert('secondary')">{{ msg }}</sv-button>
@@ -16,19 +21,19 @@
         <sv-button type="negative" @click="windowAlert('secondary')">{{ msg }}</sv-button>
       </div>
     </div>
-    <br>
+    <sv-divider :horizontal="true">labeled button</sv-divider>
     <div>
       <sv-button type="icon" icon="cloud" @click="windowAlert('icon')"></sv-button>
       <sv-button type="icon" :labeled-icon="true" icon="arrow left">{{ msg }}</sv-button>
       <sv-button type="icon" :labeled-icon="true" :right="true" icon="arrow right">{{ msg }}</sv-button>
     </div>
-    <br>
+    <sv-divider :hidden="true"></sv-divider>
     <div>
       <sv-button type="basic" icon="user" @click="windowAlert('basic')">{{ msg }}</sv-button>
       <sv-button type="basic" theme="teal" :tabindex="0" @click="windowAlert('tab-index')">{{ msg }}</sv-button>
       <sv-button type="basic" theme="black">{{ msg }}</sv-button>
     </div>
-    <br>
+    <sv-divider :clearing="true"></sv-divider>
     <div>
       <sv-labeled-button type="basic" icon="heart" label-text="Like">{{ msg }}</sv-labeled-button>
       <sv-labeled-button type="basic" icon="heart" theme="blue" label-text="Like" pointing="right">{{ msg }}
@@ -37,13 +42,13 @@
         {{ msg }}
       </sv-labeled-button>
     </div>
-    <br>
+    <sv-divider></sv-divider>
     <div>
       <sv-animated-button icon="shop" hidden-text="Cart" animate="">{{ msg }}</sv-animated-button>
       <sv-animated-button animate="vertical" icon="shop" hidden-text="Cart">{{ msg }}</sv-animated-button>
       <sv-animated-button animate="fade" icon="shop" hidden-text="Cart">{{ msg }}</sv-animated-button>
     </div>
-    <br>
+    <sv-divider></sv-divider>
     <div>
       <div>
         <sv-button-group>
@@ -54,9 +59,9 @@
           <sv-button type="negative" @click="windowAlert('secondary')">{{ msg }}</sv-button>
         </sv-button-group>
       </div>
-      <br>
+      <sv-divider></sv-divider>
       <div>
-        <sv-button-group :icon-button="true">
+        <sv-button-group :icon-button-group="true">
           <sv-button type="icon" icon="cloud"></sv-button>
           <sv-button type="icon" icon="align left"></sv-button>
           <sv-button type="icon" icon="align center"></sv-button>
@@ -64,7 +69,7 @@
           <sv-button type="icon" icon="align justify"></sv-button>
         </sv-button-group>
       </div>
-      <br>
+      <sv-divider></sv-divider>
       <div>
         <sv-button-group :conditional="true">
           <sv-button type="positive" slot="left" @click="windowAlert('left')">Left</sv-button>
@@ -84,6 +89,7 @@
   import * as svLabeledButton from './components/labeled-button.vue'
   import * as svAnimatedButton from './components/animated-button.vue'
   import * as svButtonGroup from './components/button-group.vue'
+  import * as svDivider from './components/divider.vue'
 
   export default {
     name      : 'app',
@@ -91,7 +97,8 @@
       svButton,
       svLabeledButton,
       svAnimatedButton,
-      svButtonGroup
+      svButtonGroup,
+      svDivider
     },
     data() {
       return {

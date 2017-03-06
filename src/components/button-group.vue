@@ -11,7 +11,7 @@
           { ui: true },
           theme ? theme : '',
           {
-            icon: iconButton,
+            icon: iconButtonGroup,
             buttons: true
           }]">
     <slot></slot>
@@ -22,15 +22,15 @@
   export default {
     name : 'svButtonGroup',
     props: {
-      basic      : Boolean,
-      iconButton : Boolean,
-      size       : String,
-      theme      : String,
-      conditional: {
+      basic          : Boolean,
+      iconButtonGroup: Boolean,
+      size           : String,
+      theme          : String,
+      conditional    : {
         type   : Boolean,
         default: false
       },
-      orText     : {
+      orText         : {
         type   : String,
         default: 'or'
       }
