@@ -42,13 +42,13 @@
         {{ msg }}
       </sv-labeled-button>
     </div>
-    <sv-divider></sv-divider>
+    <br>
     <div>
       <sv-animated-button icon="shop" hidden-text="Cart" animate="">{{ msg }}</sv-animated-button>
       <sv-animated-button animate="vertical" icon="shop" hidden-text="Cart">{{ msg }}</sv-animated-button>
       <sv-animated-button animate="fade" icon="shop" hidden-text="Cart">{{ msg }}</sv-animated-button>
     </div>
-    <sv-divider></sv-divider>
+    <br>
     <div>
       <div>
         <sv-button-group>
@@ -59,7 +59,7 @@
           <sv-button type="negative" @click="windowAlert('secondary')">{{ msg }}</sv-button>
         </sv-button-group>
       </div>
-      <sv-divider></sv-divider>
+      <br>
       <div>
         <sv-button-group :icon-button-group="true">
           <sv-button type="icon" icon="cloud"></sv-button>
@@ -69,7 +69,7 @@
           <sv-button type="icon" icon="align justify"></sv-button>
         </sv-button-group>
       </div>
-      <sv-divider></sv-divider>
+      <br>
       <div>
         <sv-button-group :conditional="true">
           <sv-button type="positive" slot="left" @click="windowAlert('left')">Left</sv-button>
@@ -79,6 +79,10 @@
           <sv-button slot="left">left</sv-button>
           <sv-button type="positive">Right</sv-button>
         </sv-button-group>
+      </div>
+      <br>
+      <div>
+        <sv-input with-icon="users" left v-model="msg"></sv-input>
       </div>
     </div>
   </div>
@@ -90,6 +94,7 @@
   import * as svAnimatedButton from './components/animated-button.vue'
   import * as svButtonGroup from './components/button-group.vue'
   import * as svDivider from './components/divider.vue'
+  import * as svInput from './components/input.vue'
 
   export default {
     name      : 'app',
@@ -98,11 +103,12 @@
       svLabeledButton,
       svAnimatedButton,
       svButtonGroup,
-      svDivider
+      svDivider,
+      svInput
     },
     data() {
       return {
-        msg: 'Button Text'
+        msg: 'Button'
       }
     },
     methods   : {
@@ -115,6 +121,8 @@
 
 <style lang="scss">
   #app {
+    margin-left: 100px;
+    margin-right: 100px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
