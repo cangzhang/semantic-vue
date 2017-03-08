@@ -90,12 +90,12 @@
 </template>
 
 <script>
-  import * as svButton from './components/button.vue'
-  import * as svLabeledButton from './components/labeled-button.vue'
-  import * as svAnimatedButton from './components/animated-button.vue'
-  import * as svButtonGroup from './components/button-group.vue'
-  import * as svDivider from './components/divider.vue'
-  import * as svInput from './components/input.vue'
+  import svButton from './components/button.vue'
+  import svLabeledButton from './components/labeled-button.vue'
+  import svAnimatedButton from './components/animated-button.vue'
+  import svButtonGroup from './components/button-group.vue'
+  import svDivider from './components/divider.vue'
+  import svInput from './components/input.vue'
 
   export default {
     name      : 'app',
