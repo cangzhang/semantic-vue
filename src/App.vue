@@ -76,13 +76,14 @@
           <sv-button @click="windowAlert('right')">Right</sv-button>
         </sv-button-group>
         <sv-button-group :conditional="true" orText="ou">
-          <sv-button slot="left">left</sv-button>
-          <sv-button type="positive">Right</sv-button>
+          <sv-button slot="left">un</sv-button>
+          <sv-button type="positive">deux</sv-button>
         </sv-button-group>
       </div>
       <br>
       <div>
-        <sv-input with-icon="users" left v-model="msg"></sv-input>
+        <sv-input with-icon="circular search link" icon-left v-model="svInput" placeholder="Search"></sv-input>
+        <span>{{ svInput }}</span>
       </div>
     </div>
   </div>
@@ -108,7 +109,8 @@
     },
     data() {
       return {
-        msg: 'Button'
+        msg    : 'Button',
+        svInput: ''
       }
     },
     methods   : {
