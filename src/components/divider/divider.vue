@@ -2,16 +2,16 @@
   <div class="ui"
        :class="[
          {
-           horizontal : horizontal ,
-           fitted: fitted,
-           hidden: hidden,
-           section: hidden,
-           clearing: hidden,
-           inverted: inverted,
-           divider:true
+           horizontal : !!horizontal ,
+           fitted: !!fitted,
+           hidden: !!hidden,
+           section: !!section,
+           clearing: !!clearing,
+           inverted: !!inverted,
+           divider: true
          },
         ]">
-    <slot v-if="horizontal"></slot>
+    <slot v-if="!!horizontal"></slot>
   </div>
 </template>
 
