@@ -1,22 +1,24 @@
 <template>
   <button :class="[
             {
-              circular: circular,
-              fluid: fluid,
-              compact: compact,
-              size: size,
-              ui: 'ui',
-              toggle: toggle,
+              circular: !!circular,
+              fluid: !!fluid,
+              compact: !!compact,
+            },
+            !!size ? size : '',
+            {
+              ui: true,
+              toggle: !!toggle,
             },
             theme,
             verticallyAttached,
             right ? 'right' : 'left',
             {
-              active: active,
-              labeled: labeledIcon,
+              active: !!active,
+              labeled: !!labeledIcon,
               button: 'button',
-              disabled: disabled,
-              loading: loading
+              disabled: !!disabled,
+              loading: !!loading
             },
             type,
           ]"
@@ -30,7 +32,7 @@
 
 <script>
   export default {
-    name    : 'sv-button',
+    name    : 'svButton',
     props   : {
       theme      : String,
       tabindex   : Number,

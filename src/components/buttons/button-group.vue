@@ -1,5 +1,5 @@
 <template>
-  <div v-if="conditional" class="ui buttons">
+  <div v-if="!!conditional" class="ui buttons">
     <slot name="left"></slot>
     <div class="or" :data-text="orText"></div>
     <slot></slot>
@@ -7,7 +7,7 @@
 
   <div v-else :class="[
           { basic: basic },
-          size? size : '',
+          !!size ? size : '',
           { ui: true },
           theme ? theme : '',
           {

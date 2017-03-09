@@ -1,8 +1,8 @@
 <template>
-  <div v-if="right" class="ui right labeled button"
+  <div v-if="!!right" class="ui right labeled button"
        @click="handleClick"
        :tabindex="tabindex">
-    <div class="ui" :class="[type, theme, {button : 'button'}]">
+    <div class="ui" :class="[type, theme, { button : true }]">
       <i :class="icon" class="icon"></i>
       {{ labelText }}
     </div>
@@ -10,11 +10,8 @@
        :class="[
          type,
          pointingTo,
-         {
-           label: 'label'
-         },
-         theme
-       ]">
+         { label: true },
+         theme]">
       <slot></slot>
     </a>
   </div>
@@ -25,14 +22,11 @@
        :class="[
          type,
          pointingTo,
-         {
-           label: 'label'
-         },
-         theme
-       ]">
+         { label: true },
+         theme]">
       <slot></slot>
     </a>
-    <div class="ui" :class="[theme, {button : 'button'}]">
+    <div class="ui" :class="[theme, { button : true }]">
       <i :class="icon" class="icon"></i>
       {{ labelText }}
     </div>

@@ -7,11 +7,12 @@
         <sv-button theme="twitter">{{ msg }}</sv-button>
         <sv-button :active="true" @click="windowAlert('active')">{{ msg }}</sv-button>
         <sv-button :disabled="true" @click="windowAlert('active')">{{ msg }}</sv-button>
+        <sv-button compact @click="windowAlert('normal')">{{ msg }}</sv-button>
       </div>
       <sv-divider :horizontal="true">
         <div>
-          <i class="tag icon"></i>
-          themed
+          <i class="tag icon"></i>themed
+
         </div>
       </sv-divider>
       <div>
@@ -37,9 +38,29 @@
     <div>
       <sv-labeled-button type="basic" icon="heart" label-text="Like">{{ msg }}</sv-labeled-button>
       <sv-labeled-button type="basic" icon="heart" theme="blue" label-text="Like" pointing="right">{{ msg }}
+
+
+
+
+
+
+
+
+
+
       </sv-labeled-button>
       <sv-labeled-button type="basic" icon="heart" theme="red" :right="true" label-text="Like" pointing="left">
         {{ msg }}
+
+
+
+
+
+
+
+
+
+
       </sv-labeled-button>
     </div>
     <br>
@@ -75,7 +96,7 @@
           <sv-button type="positive" slot="left" @click="windowAlert('left')">Left</sv-button>
           <sv-button @click="windowAlert('right')">Right</sv-button>
         </sv-button-group>
-        <sv-button-group :conditional="true" orText="ou">
+        <sv-button-group :conditional="true" or-text="ou">
           <sv-button slot="left">un</sv-button>
           <sv-button type="positive">deux</sv-button>
         </sv-button-group>
@@ -90,23 +111,9 @@
 </template>
 
 <script>
-  import svButton from './components/button.vue'
-  import svLabeledButton from './components/labeled-button.vue'
-  import svAnimatedButton from './components/animated-button.vue'
-  import svButtonGroup from './components/button-group.vue'
-  import svDivider from './components/divider.vue'
-  import svInput from './components/input.vue'
-
   export default {
     name      : 'app',
-    components: {
-      svButton,
-      svLabeledButton,
-      svAnimatedButton,
-      svButtonGroup,
-      svDivider,
-      svInput
-    },
+    components: {},
     data() {
       return {
         msg    : 'Button',

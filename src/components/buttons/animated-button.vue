@@ -2,17 +2,14 @@
   <div class="ui"
        :class="[
          animate ? 'animated ' + animate : 'animated ',
-         {
-           button: 'button'
-         }
-       ]"
+         { button: true }]"
        @click="handleClick"
        :tabindex="tabindex">
     <div class="visible content">
       <slot></slot>
     </div>
     <div class="hidden content">
-      <i v-if="icon" :class="icon" class="icon"></i>
+      <i v-if="!!icon" :class="icon" class="icon"></i>
       {{ hiddenText }}
     </div>
   </div>

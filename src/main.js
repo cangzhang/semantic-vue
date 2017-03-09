@@ -1,10 +1,7 @@
 import './resources/app.scss'
 
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'entry'
 import App from './App'
-
-Vue.use(VueRouter)
 
 new Vue({
   el    : '#app',
