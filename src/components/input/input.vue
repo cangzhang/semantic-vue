@@ -2,14 +2,15 @@
   <div class="ui"
        :class="[
          !!size ? size : '',
+         !!labeled ? labeled + ' labeled' : '',
          {
-           transparent: transparent,
+           transparent: !!transparent,
            left: !!iconLeft,
            icon: !!withIcon,
-           disabled: disabled,
+           disabled: !!disabled,
            input: true,
-           loading: loading,
-           error: error
+           loading: !!loading,
+           error: !!error
          }]">
     <input type="text"
            :placeholder="placeholder"
@@ -17,32 +18,35 @@
            :autofocus="!!autofocus"
            @input="handleInput">
     <i :class="withIcon" class="icon"></i>
+    <slot v-if="!!labeled"></slot>
   </div>
 </template>
 
 <script>
   //TODO: inverted fluid labeled autofocus
   export default {
-    name   : 'svInput',
-    props  : {
-      value      : [String, Number],
-      disabled   : Boolean,
+    name: 'svInput',
+    props: {
+      value: [String, Number],
+      disabled: Boolean,
       placeholder: String,
-      loading    : Boolean,
-      withIcon   : String,
-      iconLeft   : Boolean,
-      error      : Boolean,
+      loading: Boolean,
+      withIcon: String,
+      iconLeft: Boolean,
+      error: Boolean,
       transparent: Boolean,
-      size       : String,
-      readonly   : Boolean,
-      autofocus  : Boolean,
+      size: String,
+      readonly: Boolean,
+      autofocus: Boolean,
+      labeled: String,
+      labelText: String
     },
     data() {
       return {
         currentVal: this.value
       }
     },
-    watch  : {
+    watch: {
       'value'(newVal) {
         this.setCurrentValue(newVal);
       }

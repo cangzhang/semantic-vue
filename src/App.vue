@@ -83,7 +83,11 @@
       </div>
       <br>
       <div>
-        <sv-input with-icon="circular search link" icon-left v-model="svInput" placeholder="Search"></sv-input>
+        <br>
+        <br>
+        <sv-input with-icon="circular search link"
+                  labeled="right"
+                  v-model="svInput" placeholder="Search"></sv-input>
         <span>{{ svInput }}</span>
       </div>
     </div>
