@@ -4,7 +4,6 @@
     <div class="or" :data-text="orText"></div>
     <slot></slot>
   </div>
-
   <div v-else :class="[
           { basic: basic },
           !!size ? size : '',

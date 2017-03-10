@@ -11,8 +11,8 @@
       </div>
       <sv-divider :horizontal="true">
         <div>
-          <i class="tag icon"></i>themed
-
+          <i class="tag icon"></i>
+          themed
         </div>
       </sv-divider>
       <div>
@@ -38,29 +38,9 @@
     <div>
       <sv-labeled-button type="basic" icon="heart" label-text="Like">{{ msg }}</sv-labeled-button>
       <sv-labeled-button type="basic" icon="heart" theme="blue" label-text="Like" pointing="right">{{ msg }}
-
-
-
-
-
-
-
-
-
-
       </sv-labeled-button>
       <sv-labeled-button type="basic" icon="heart" theme="red" :right="true" label-text="Like" pointing="left">
         {{ msg }}
-
-
-
-
-
-
-
-
-
-
       </sv-labeled-button>
     </div>
     <br>
@@ -110,7 +90,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/babel">
   export default {
     name      : 'app',
     components: {},
@@ -128,7 +108,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" rel="stylesheet/scss">
   #app {
     margin-left: 100px;
     margin-right: 100px;
