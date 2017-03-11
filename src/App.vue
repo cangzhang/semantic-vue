@@ -1,11 +1,10 @@
 <template>
   <div id="app">
     <div>
-      <router-link to="/buttons">Button</router-link>
+      <router-link to="/buttons"><sv-button><i class="tag icon"></i>Button Page</sv-button></router-link>
+      <sv-divider horizontal>Page Content</sv-divider>
     </div>
-    <!--<img src="./assets/logo.png">-->
     <router-view></router-view>
-    <sv-divider></sv-divider>
     <div>
       <sv-input with-icon="circular search link"
                 labeled="right"

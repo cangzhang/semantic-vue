@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="btn-content">
     <div>
       <sv-button @click="windowAlert('normal')">{{ msg }}</sv-button>
       <sv-button theme="twitter">{{ msg }}</sv-button>
@@ -7,37 +7,38 @@
       <sv-button :disabled="true" @click="windowAlert('active')">{{ msg }}</sv-button>
       <sv-button compact @click="windowAlert('normal')">{{ msg }}</sv-button>
     </div>
-    <sv-divider :horizontal="true">
-      <div>
-        <i class="tag icon"></i>
-        themed
-      </div>
-    </sv-divider>
+    <br>
+
     <div>
       <sv-button type="primary" @click="windowAlert('primary')">{{ msg }}</sv-button>
       <sv-button type="secondary" @click="windowAlert('secondary')">{{ msg }}</sv-button>
       <sv-button type="positive" @click="windowAlert('secondary')">{{ msg }}</sv-button>
       <sv-button type="negative" @click="windowAlert('secondary')">{{ msg }}</sv-button>
     </div>
-    <sv-divider :horizontal="true">labeled button</sv-divider>
+    <br>
+
     <div>
       <sv-button type="icon" icon="cloud" @click="windowAlert('icon')"></sv-button>
       <sv-button type="icon" :labeled-icon="true" icon="arrow left">{{ msg }}</sv-button>
       <sv-button type="icon" :labeled-icon="true" :right="true" icon="arrow right">{{ msg }}</sv-button>
     </div>
-    <sv-divider :hidden="true"></sv-divider>
+    <br>
+
     <div>
       <sv-button type="basic" icon="user" @click="windowAlert('basic')">{{ msg }}</sv-button>
       <sv-button type="basic" theme="teal" :tabindex="0" @click="windowAlert('tab-index')">{{ msg }}</sv-button>
       <sv-button type="basic" theme="black">{{ msg }}</sv-button>
     </div>
-    <sv-divider :clearing="true"></sv-divider>
+    <br>
+
     <div>
       <sv-labeled-button type="basic" icon="heart" label-text="Like">{{ msg }}</sv-labeled-button>
       <sv-labeled-button type="basic" icon="heart" theme="blue" label-text="Like" pointing="right">{{ msg }}
+
       </sv-labeled-button>
       <sv-labeled-button type="basic" icon="heart" theme="red" :right="true" label-text="Like" pointing="left">
         {{ msg }}
+
       </sv-labeled-button>
     </div>
     <br>
@@ -46,6 +47,8 @@
       <sv-animated-button animate="vertical" icon="shop" hidden-text="Cart">{{ msg }}</sv-animated-button>
       <sv-animated-button animate="fade" icon="shop" hidden-text="Cart">{{ msg }}</sv-animated-button>
     </div>
+    <br>
+
     <div>
       <sv-button-group>
         <sv-button @click="windowAlert('normal')">{{ msg }}</sv-button>
