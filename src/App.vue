@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <div>
-      <router-link to="/buttons"><sv-button><i class="tag icon"></i>Button Page</sv-button></router-link>
+      <router-link to="/">
+        <sv-button type="icon" icon="home"></sv-button>
+      </router-link>
+      <router-link to="/buttons">
+        <sv-button><i class="tag icon"></i>Button Page</sv-button>
+      </router-link>
       <sv-divider horizontal>Page Content</sv-divider>
     </div>
     <router-view></router-view>
@@ -16,15 +21,15 @@
 
 <script type="text/babel">
   export default {
-    name      : 'app',
+    name: 'app',
     components: {},
     data() {
       return {
-        msg    : 'Button',
+        msg: 'Button',
         svInput: ''
       }
     },
-    methods   : {
+    methods: {
       windowAlert(text) {
         alert(text)
       }
