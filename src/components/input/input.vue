@@ -60,7 +60,7 @@
         const value = event.target.value;
         this.$emit('input', value);
         this.setCurrentValue(value);
-//        this.$emit('change', value);
+        this.$emit('change', value);
       },
     }
   }

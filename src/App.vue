@@ -5,17 +5,22 @@
         <sv-button type="icon" icon="home"></sv-button>
       </router-link>
       <router-link to="/buttons">
-        <sv-button><i class="tag icon"></i>Button Page</sv-button>
+        <sv-button>
+          <i class="tag icon"></i>
+          Button Element
+        </sv-button>
       </router-link>
-      <sv-divider horizontal>Page Content</sv-divider>
+      <router-link to="/input">
+        <sv-button>
+          <i class="tag icon"></i>
+          Input Element
+        </sv-button>
+      </router-link>
+      <sv-divider horizontal>Content</sv-divider>
     </div>
+
     <router-view></router-view>
-    <div>
-      <sv-input with-icon="circular search link"
-                labeled="right"
-                v-model="svInput" placeholder="Search"></sv-input>
-      <span>{{ svInput }}</span>
-    </div>
+
   </div>
 </template>
 
@@ -45,6 +50,6 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 10%;
+    margin-top: 50px;
   }
 </style>

@@ -90,6 +90,11 @@
       return {
         msg: 'Button'
       }
+    },
+    methods: {
+      windowAlert(text) {
+        alert(text)
+      }
     }
   }
 </script>
