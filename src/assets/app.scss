@@ -1,0 +1,10 @@
+@import '../../node_modules/semantic-ui-sass/app/assets/stylesheets/semantic-ui';
+
+@font-face {
+  font-family: 'Icons';
+  src: url("../../node_modules/semantic-ui-sass/app/assets/fonts/semantic-ui/icons.eot?#iefix") format('embedded-opentype'),
+  url("../../node_modules/semantic-ui-sass/app/assets/fonts/semantic-ui/icons.woff2") format('woff2'),
+  url("../../node_modules/semantic-ui-sass/app/assets/fonts/semantic-ui/icons.woff") format('woff'),
+  url("../../node_modules/semantic-ui-sass/app/assets/fonts/semantic-ui/icons.ttf") format('truetype'),
+  url("../../node_modules/semantic-ui-sass/app/assets/fonts/semantic-ui/icons.svg#icons") format('svg');
+}

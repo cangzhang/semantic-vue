@@ -2,7 +2,8 @@
   <div class="ui"
        :class="[
          animate ? 'animated ' + animate : 'animated ',
-         { button: true }]"
+         { button: true }
+       ]"
        @click="handleClick"
        :tabindex="tabindex">
     <div class="visible content">

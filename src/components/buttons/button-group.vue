@@ -6,9 +6,9 @@
   </div>
   <div v-else :class="[
           { basic: basic },
-          !!size ? size : '',
+          size,
           { ui: true },
-          theme ? theme : '',
+          theme,
           {
             icon: iconButtonGroup,
             buttons: true

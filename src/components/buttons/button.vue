@@ -5,7 +5,7 @@
               fluid: !!fluid,
               compact: !!compact,
             },
-            !!size ? size : '',
+            size,
             {
               ui: true,
               toggle: !!toggle,

@@ -1,4 +1,4 @@
-import './resources/app.scss'
+import './assets/app.scss'
 
 import {Vue, VueRouter} from 'entry'
 import routes from './tpl/routes'
