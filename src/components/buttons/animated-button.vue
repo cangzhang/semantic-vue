@@ -19,12 +19,12 @@
 <script>
   //TODO
   export default {
-    name   : 'sv-animated-button',
-    props  : {
-      tabindex  : Number,
+    name: 'sv-animated-button',
+    props: {
+      tabindex: Number,
       hiddenText: String,
-      icon      : String,
-      animate   : String
+      icon: String,
+      animate: String
     },
     methods: {
       handleClick(ev) {

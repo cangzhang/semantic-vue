@@ -18,17 +18,17 @@
 <script>
   //TODO: vertical, Inverted
   export default {
-    name : 'svDivider',
+    name: 'svDivider',
     props: {
       horizontal: {
-        type   : Boolean,
+        type: Boolean,
         default: false
       },
-      inverted  : Boolean,
-      fitted    : Boolean,
-      hidden    : Boolean,
-      section   : Boolean,
-      clearing  : Boolean,
+      inverted: Boolean,
+      fitted: Boolean,
+      hidden: Boolean,
+      section: Boolean,
+      clearing: Boolean,
     }
   }
 </script>

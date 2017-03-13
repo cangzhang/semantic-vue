@@ -32,25 +32,25 @@
 
 <script>
   export default {
-    name    : 'svButton',
-    props   : {
-      theme      : String,
-      tabindex   : Number,
-      type       : String,
-      disabled   : Boolean,
-      autofocus  : Boolean,
-      icon       : String,
+    name: 'svButton',
+    props: {
+      theme: String,
+      tabindex: Number,
+      type: String,
+      disabled: Boolean,
+      autofocus: Boolean,
+      icon: String,
       labeledIcon: Boolean,
-      right      : Boolean,
-      animated   : String,
-      loading    : String,
-      active     : Boolean,
-      fluid      : Boolean,
-      circular   : Boolean,
-      compact    : Boolean,
-      toggle     : Boolean,
-      size       : String,
-      attached   : String,
+      right: Boolean,
+      animated: String,
+      loading: String,
+      active: Boolean,
+      fluid: Boolean,
+      circular: Boolean,
+      compact: Boolean,
+      toggle: Boolean,
+      size: String,
+      attached: String,
     },
     computed: {
       verticallyAttached() {
@@ -59,7 +59,7 @@
         }
       }
     },
-    methods : {
+    methods: {
       handleClick(ev) {
         this.$emit('click', ev);
       }

@@ -19,18 +19,18 @@
 
 <script>
   export default {
-    name : 'svButtonGroup',
+    name: 'svButtonGroup',
     props: {
-      basic          : Boolean,
+      basic: Boolean,
       iconButtonGroup: Boolean,
-      size           : String,
-      theme          : String,
-      conditional    : {
-        type   : Boolean,
+      size: String,
+      theme: String,
+      conditional: {
+        type: Boolean,
         default: false
       },
-      orText         : {
-        type   : String,
+      orText: {
+        type: String,
         default: 'or'
       }
     }
