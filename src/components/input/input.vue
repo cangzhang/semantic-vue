@@ -4,6 +4,7 @@
          !!size ? size : '',
          !!labeled ? labeled + ' labeled' : '',
          {
+           fluid: !!fluid,
            transparent: !!transparent,
            left: !!iconLeft,
            icon: !!withIcon,
@@ -23,7 +24,7 @@
 </template>
 
 <script>
-  //TODO: inverted fluid labeled autofocus
+  //TODO: inverted labeled autofocus
   export default {
     name: 'svInput',
     props: {
@@ -39,7 +40,8 @@
       readonly: Boolean,
       autofocus: Boolean,
       labeled: String,
-      labelText: String
+      labelText: String,
+      fluid: Boolean
     },
     data() {
       return {

@@ -1,13 +1,6 @@
 <template>
   <div>
     <span>{{ svInput }}</span>
-    <div>
-      <sv-input with-icon="circular search link"
-                placeholder="Search"
-                labeled="right"
-                v-model="svInput">
-      </sv-input>
-    </div>
     <br>
     <div>
       <sv-input loading icon-left
@@ -22,11 +15,20 @@
       </sv-input>
       <br>
       <br>
-      <sv-input error
-                with-icon="lock"
-                placeholder="Disabled"
+      <sv-input error fluid
+                with-icon="unlock"
+                placeholder="Error"
                 v-model="svInput">
       </sv-input>
+      <br>
+      <div>
+        <sv-input fluid size="large"
+                  with-icon="inverted circular search link icon"
+                  placeholder="Search"
+                  labeled="right"
+                  v-model="svInput">
+        </sv-input>
+      </div>
     </div>
   </div>
 </template>
