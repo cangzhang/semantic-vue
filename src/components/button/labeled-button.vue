@@ -36,14 +36,14 @@
 <script>
   export default {
     name: 'SvLabeledButton',
-    props   : {
-      tabindex : Number,
-      theme    : String,
-      icon     : String,
-      right    : Boolean,
-      type     : String,
+    props: {
+      tabindex: Number,
+      theme: String,
+      icon: String,
+      right: Boolean,
+      type: String,
       labelText: String,
-      pointing : String
+      pointing: String
     },
     computed: {
       pointingTo: function () {
@@ -54,7 +54,7 @@
         return ''
       }
     },
-    methods : {
+    methods: {
       handleClick(ev) {
         this.$emit('click', ev);
       }

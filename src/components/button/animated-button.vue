@@ -20,11 +20,11 @@
   //TODO
   export default {
     name: 'SvAnimatedButton',
-    props  : {
-      tabindex  : Number,
+    props: {
+      tabindex: Number,
       hiddenText: String,
-      icon      : String,
-      animate   : String
+      icon: String,
+      animate: String
     },
     methods: {
       handleClick(ev) {
