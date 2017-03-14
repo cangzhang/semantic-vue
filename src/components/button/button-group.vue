@@ -19,7 +19,7 @@
 
 <script>
   export default {
-    name : 'svButtonGroup',
+    name: 'SvButtonGroup',
     props: {
       basic          : Boolean,
       iconButtonGroup: Boolean,

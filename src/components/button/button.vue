@@ -32,7 +32,7 @@
 
 <script>
   export default {
-    name    : 'svButton',
+    name: 'SvButton',
     props   : {
       theme      : String,
       tabindex   : Number,

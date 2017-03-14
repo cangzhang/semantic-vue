@@ -35,7 +35,7 @@
 
 <script>
   export default {
-    name    : 'sv-labeled-button',
+    name: 'SvLabeledButton',
     props   : {
       tabindex : Number,
       theme    : String,

@@ -18,7 +18,7 @@
 <script>
   //TODO: vertical, Inverted
   export default {
-    name : 'svDivider',
+    name: 'SvDivider',
     props: {
       horizontal: {
         type   : Boolean,

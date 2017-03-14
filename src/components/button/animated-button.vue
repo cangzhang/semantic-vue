@@ -19,7 +19,7 @@
 <script>
   //TODO
   export default {
-    name   : 'sv-animated-button',
+    name: 'SvAnimatedButton',
     props  : {
       tabindex  : Number,
       hiddenText: String,

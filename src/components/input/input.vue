@@ -26,7 +26,7 @@
 <script>
   //TODO: inverted labeled autofocus
   export default {
-    name: 'svInput',
+    name: 'SvInput',
     props: {
       value: [String, Number],
       disabled: Boolean,

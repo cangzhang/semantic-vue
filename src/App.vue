@@ -18,8 +18,11 @@
       </router-link>
       <sv-divider horizontal>Content</sv-divider>
     </div>
+    <br>
 
-    <router-view></router-view>
+    <sv-container>
+      <router-view></router-view>
+    </sv-container>
 
   </div>
 </template>
