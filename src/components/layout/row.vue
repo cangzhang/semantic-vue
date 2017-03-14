@@ -1,5 +1,7 @@
 <template>
-  <div :class="colClass" class="row"></div>
+  <div :class="colClass" class="row">
+    <slot></slot>
+  </div>
 </template>
 
 <script>
@@ -12,7 +14,9 @@
     },
     computed: {
       colClass() {
-        return util.getColClass(this.column)
+        if (!!this.column) {
+          return util.getColClass(this.column)
+        }
       }
     }
   }

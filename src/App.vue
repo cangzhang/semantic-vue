@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div>
+    <sv-row class="topNav">
       <router-link to="/">
         <sv-button type="icon" icon="home"></sv-button>
       </router-link>
@@ -17,10 +17,10 @@
         </sv-button>
       </router-link>
       <sv-divider horizontal>Content</sv-divider>
-    </div>
+    </sv-row>
     <br>
 
-    <sv-container>
+    <sv-container class="center aligned">
       <router-view></router-view>
     </sv-container>
 
@@ -51,8 +51,11 @@
     margin-right: 100px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
     margin-top: 50px;
+
+  .topNav {
+    text-align: center;
+  }
   }
 </style>

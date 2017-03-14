@@ -1,5 +1,10 @@
 <template>
-  <div class="ui" :class="[{ text: !!text, container: true }]">
+  <div class="ui"
+       :class="[
+       {
+         text: !!text,
+         container: true
+       }]">
     <slot></slot>
   </div>
 </template>
