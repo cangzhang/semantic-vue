@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!!right" class="ui right labeled button"
+  <div v-if="!!right" :class="realSize" class="ui right labeled button"
        @click="handleClick"
        :tabindex="tabindex">
     <div class="ui" :class="[type, theme, { button : true }]">
@@ -15,7 +15,7 @@
       <slot></slot>
     </a>
   </div>
-  <div v-else class="ui left labeled button"
+  <div v-else :class="realSize" class="ui left labeled button"
        :tabindex="tabindex"
        @click="handleClick">
     <a class="ui"
@@ -34,6 +34,8 @@
 </template>
 
 <script>
+  import util from '../../utils/util'
+
   export default {
     name: 'SvLabeledButton',
     props: {
@@ -52,6 +54,9 @@
           return this.pointing + ' pointing'
         }
         return ''
+      },
+      realSize() {
+        return util.getSize(this.size)
       }
     },
     methods: {

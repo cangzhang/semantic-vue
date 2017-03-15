@@ -1,5 +1,5 @@
 <template>
-  <div :class="colClass" class="row">
+  <div :class="[colClass, { row: true }]">
     <slot></slot>
   </div>
 </template>

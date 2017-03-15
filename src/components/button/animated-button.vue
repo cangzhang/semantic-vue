@@ -1,6 +1,7 @@
 <template>
   <div class="ui"
        :class="[
+         realSize,
          animate ? 'animated ' + animate : 'animated ',
          { button: true }
        ]"
@@ -18,13 +19,21 @@
 
 <script>
   //TODO
+  import util from '../../utils/util'
+
   export default {
     name: 'SvAnimatedButton',
     props: {
       tabindex: Number,
       hiddenText: String,
       icon: String,
-      animate: String
+      animate: String,
+      size: [String, Number]
+    },
+    computed: {
+      realSize() {
+        return util.getSize(this.size)
+      }
     },
     methods: {
       handleClick(ev) {

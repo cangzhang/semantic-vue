@@ -5,7 +5,7 @@
               fluid: !!fluid,
               compact: !!compact,
             },
-            size,
+            realSize,
             {
               ui: true,
               toggle: !!toggle,
@@ -31,6 +31,8 @@
 </template>
 
 <script>
+  import util from '../../utils/util'
+
   export default {
     name: 'SvButton',
     props: {
@@ -49,7 +51,7 @@
       circular: Boolean,
       compact: Boolean,
       toggle: Boolean,
-      size: String,
+      size: [String, Number],
       attached: String,
     },
     computed: {
@@ -57,6 +59,9 @@
         if (typeof this.attached !== 'undefined') {
           return this.attached + ' attached'
         }
+      },
+      realSize() {
+        return util.getSize(this.size)
       }
     },
     methods: {

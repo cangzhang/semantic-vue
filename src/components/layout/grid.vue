@@ -4,9 +4,9 @@
          colNum,
          {
            doubling: !!doubling,
-           stackable: !!stackable,
-           celled: !!celled
+           stackable: !!stackable
          },
+         celledClass,
          dividedClass,
          {
            grid: true,
@@ -17,8 +17,9 @@
 </template>
 
 <script>
-  //TODO: consecutive
+  //TODO: consecutive responsive
   import util from '../../utils/util'
+
   export default {
     name: 'SvGrid',
     props: {
@@ -26,8 +27,8 @@
       stackable: Boolean,
       doubling: Boolean,
       celled: Boolean,
-      gridContainer: Boolean,
-      divided: String
+      divided: String,
+      gridContainer: Boolean
     },
     computed: {
       colNum() {
@@ -36,11 +37,16 @@
         }
       },
       dividedClass() {
-        if (!!this.divided && this.divided.length && this.divided === 'v') {
-          return 'vertically divided'
-        } else {
-          return 'divided'
+        if (!!this.gridContainer) {
+          if (!!this.divided && this.divided.length && this.divided === 'v') {
+            return 'vertically divided'
+          } else if (!!this.divided) {
+            return 'divided'
+          }
         }
+      },
+      celledClass() {
+        return !!this.gridContainer ? this.celled : ''
       }
     }
   }

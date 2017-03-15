@@ -1,7 +1,7 @@
 <template>
   <div class="ui"
        :class="[
-         !!size ? size : '',
+         realSize,
          !!labeled ? labeled + ' labeled' : '',
          {
            fluid: !!fluid,
@@ -25,6 +25,8 @@
 
 <script>
   //TODO: inverted labeled autofocus
+  import util from '../../utils/util'
+
   export default {
     name: 'SvInput',
     props: {
@@ -36,12 +38,17 @@
       iconLeft: Boolean,
       error: Boolean,
       transparent: Boolean,
-      size: String,
+      size: [String, Number],
       readonly: Boolean,
       autofocus: Boolean,
       labeled: String,
       labelText: String,
       fluid: Boolean
+    },
+    computed: {
+      realSize() {
+        return util.getSize(this.size)
+      }
     },
     data() {
       return {
