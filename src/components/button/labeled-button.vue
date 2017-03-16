@@ -61,7 +61,7 @@
     },
     methods: {
       handleClick(ev) {
-        this.$emit('click', ev);
+        this.$emit('click', ev)
       }
     }
   }
