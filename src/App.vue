@@ -16,6 +16,12 @@
           Input Element
         </sv-button>
       </router-link>
+      <router-link to="/label">
+        <sv-button>
+          <i class="tag icon"></i>
+          Label Element
+        </sv-button>
+      </router-link>
       <sv-divider horizontal>Content</sv-divider>
     </sv-row>
     <br>

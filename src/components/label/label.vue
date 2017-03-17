@@ -22,7 +22,7 @@
     <!--<img :src="withImg" v-if="!!withImg">-->
     <slot></slot>
     <i :class="withIcon" class="icon" v-if="!!withIcon"></i>
-    <div class="detail" v-if="!!detail">{{ detailText }}</div>
+    <div class="detail" v-if="!!detailText">{{ detailText }}</div>
   </div>
 </template>
 
