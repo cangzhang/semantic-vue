@@ -9,6 +9,8 @@ import svContainer from './layout/container.vue'
 import svGrid from './layout/grid.vue'
 import svRow from './layout/row.vue'
 import svLabel from './label/label.vue'
+import svIcon from './icon/icon.vue'
+import svIconGroup from './icon/icon-group.vue'
 
 export default [
   svButton,
@@ -21,5 +23,7 @@ export default [
   svContainer,
   svGrid,
   svRow,
-  svLabel
+  svLabel,
+  svIcon,
+  svIconGroup
 ]

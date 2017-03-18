@@ -1,5 +1,5 @@
 <template>
-  <div :class="[
+  <a :class="[
         {
           floating: !!floating,
           ui: true,
@@ -21,29 +21,26 @@
        @click="handleClick">
     <!--<img :src="withImg" v-if="!!withImg">-->
     <slot></slot>
-    <i :class="withIcon" class="icon" v-if="!!withIcon"></i>
-    <div class="detail" v-if="!!detailText">{{ detailText }}</div>
-  </div>
+    <div class="detail" v-if="!!withDetail">{{ withDetail }}</div>
+  </a>
 </template>
 
 <script>
   //TODO: img, <a> or <div>?
   import util from '../../utils/util'
 
-  const dir = ['', 'top', 'bottom', 'left', 'right']
+  const DIRT = ['', 'top', 'bottom', 'left', 'right']
 
   export default {
     name: 'SvLabel',
     props: {
-      withIcon: [String, Boolean],
-//      withImg: String,
       pointTo: [String, Boolean],
       type: String,
       theme: String,
       corner: String,
       attached: String,
       position: String,
-      detailText: String,
+      withDetail: String,
       tag: Boolean,
       ribbon: Boolean,
       horizontal: Boolean,
@@ -57,13 +54,12 @@
         return util.getPointingTo(this.pointTo)
       },
       positionClass() {
-        let index = dir.indexOf(this.position)
+        let index = DIRT.indexOf(this.position)
         if (index <= 1 && index >= 0)
           return this.position
       },
       attachedClass() {
-        let index = dir.indexOf(this.attached)
-        if (index >= 0)
+        if (this.attached)
           return this.attached + ' attached'
       },
       sizeClass() {
