@@ -1,5 +1,30 @@
 <template>
-  <a :class="[
+  <a v-if="!!asLink" :class="[
+        {
+          floating: !!floating,
+          ui: true,
+          horizontal: !!horizontal,
+        },
+        sizeClass,
+        attachedClass,
+        !!corner ? corner + ' corner' : '',
+        pointingTo,
+        theme,
+        type,
+        !!ribbon ? ribbon + ' ribbon' : '',
+        {
+          image: !!withImg,
+          circular: !!circular,
+          tag: !!tag,
+          label: true
+        }]"
+       @click="handleClick">
+    <!--<img :src="withImg" v-if="!!withImg">-->
+    <slot></slot>
+    <div class="detail" v-if="!!withDetail">{{ withDetail }}</div>
+  </a>
+
+  <div v-else :class="[
         {
           floating: !!floating,
           ui: true,
@@ -14,6 +39,7 @@
         type,
         !!ribbon ? ribbon + ' ribbon' : '',
         {
+          image: !!withImg,
           circular: !!circular,
           tag: !!tag,
           label: true
@@ -22,11 +48,10 @@
     <!--<img :src="withImg" v-if="!!withImg">-->
     <slot></slot>
     <div class="detail" v-if="!!withDetail">{{ withDetail }}</div>
-  </a>
+  </div>
 </template>
 
 <script>
-  //TODO: img, <a> or <div>?
   import util from '../../utils/util'
 
   const DIRT = ['', 'top', 'bottom', 'left', 'right']
@@ -47,7 +72,9 @@
       floating: Boolean,
       detail: Boolean,
       circular: Boolean,
-      size: String
+      size: String,
+      asLink: Boolean,
+      withImg: Boolean // if there were images
     },
     computed: {
       pointingTo() {

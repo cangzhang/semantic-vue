@@ -12,8 +12,10 @@
          link: !!link,
          flipped: !!flipped,
          rotated: !!rotated,
-       }]"
-     class="icon">
+       },
+       withIcon
+       ]"
+     class="icon" @click="handleClick">
   </i>
 </template>
 
@@ -41,6 +43,11 @@
     computed: {
       sizeClass() {
         return util.getSize(this.size)
+      }
+    },
+    methods: {
+      handleClick(ev) {
+        this.$emit('click', ev)
       }
     }
   }
