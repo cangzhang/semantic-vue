@@ -11,6 +11,8 @@ import svRow from './layout/row.vue'
 import svLabel from './label/label.vue'
 import svIcon from './icon/icon.vue'
 import svIconGroup from './icon/icon-group.vue'
+import svList from './list/list.vue'
+import svListItem from './list/list-item.vue'
 
 export default [
   svButton,
@@ -25,5 +27,7 @@ export default [
   svRow,
   svLabel,
   svIcon,
-  svIconGroup
+  svIconGroup,
+  svList,
+  svListItem
 ]

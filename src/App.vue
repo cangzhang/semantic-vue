@@ -2,25 +2,19 @@
   <div id="app">
     <sv-row class="topNav">
       <router-link to="/">
-        <sv-button type="icon" icon="home"></sv-button>
+        <sv-button type="icon" icon="home" compact></sv-button>
       </router-link>
-      <router-link to="/buttons">
-        <sv-button>
-          <i class="tag icon"></i>
-          Button Element
-        </sv-button>
+      <router-link to="/button">
+        <sv-button compact>Button</sv-button>
       </router-link>
       <router-link to="/input">
-        <sv-button>
-          <i class="tag icon"></i>
-          Input Element
-        </sv-button>
+        <sv-button compact>Input</sv-button>
       </router-link>
       <router-link to="/label">
-        <sv-button>
-          <i class="tag icon"></i>
-          Label Element
-        </sv-button>
+        <sv-button compact>Label</sv-button>
+      </router-link>
+      <router-link to="/list">
+        <sv-button compact>List</sv-button>
       </router-link>
       <sv-divider horizontal>Content</sv-divider>
     </sv-row>
@@ -33,7 +27,7 @@
   </div>
 </template>
 
-<script type="text/babel">
+<script>
   export default {
     name: 'app',
     components: {},
@@ -59,9 +53,8 @@
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
     margin-top: 50px;
-
-  .topNav {
-    text-align: center;
-  }
+    .topNav {
+      text-align: center;
+    }
   }
 </style>

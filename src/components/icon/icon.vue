@@ -13,9 +13,12 @@
          flipped: !!flipped,
          rotated: !!rotated,
        },
-       withIcon
+       withIcon,
+       {
+         icon: true
+       }
        ]"
-     class="icon" @click="handleClick">
+     @click="handleClick">
   </i>
 </template>
 
