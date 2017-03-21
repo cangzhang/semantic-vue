@@ -14,7 +14,7 @@
            selection: !!selection,
            animated: !!animated,
            link: !!link,
-           list: true
+           'list': true
        }]">
     <slot></slot>
   </div>
@@ -28,6 +28,7 @@
     props: {
       inline: Boolean,
       relaxed: Boolean,
+      veryRelaxed: Boolean,
       veryRelaxed: Boolean,
       divided: Boolean,
       bulleted: Boolean,

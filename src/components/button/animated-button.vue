@@ -11,8 +11,7 @@
       <slot></slot>
     </div>
     <div class="hidden content">
-      <i v-if="!!icon" :class="icon" class="icon"></i>
-      {{ hiddenText }}
+      <i v-if="!!icon" :class="icon" class="icon"></i> {{ hiddenText }}
     </div>
   </div>
 </template>
