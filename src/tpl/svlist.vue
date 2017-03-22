@@ -4,6 +4,25 @@
       <sv-row>
         <sv-col>
           <sv-list horizontal>
+            <sv-list-item aligned="top">
+              <img class="ui avatar image" src="../assets/img/square-image.png" slot="pre">
+              Top Aligned
+            </sv-list-item>
+            <sv-list-item aligned="middle">
+              <img class="ui avatar image" src="../assets/img/square-image.png" slot="pre">
+              Middle Aligned
+            </sv-list-item>
+            <sv-list-item aligned="bottom">
+              <img class="ui avatar image" src="../assets/img/square-image.png" slot="pre">
+              Bottom Aligned
+            </sv-list-item>
+          </sv-list>
+        </sv-col>
+      </sv-row>
+
+      <sv-row>
+        <sv-col>
+          <sv-list horizontal>
             <sv-list-item>
               <sv-icon with-icon="users" slot="pre"></sv-icon>
               <span>Semantic UI</span>
@@ -33,22 +52,55 @@
           </sv-list>
         </sv-col>
       </sv-row>
+      <sv-row>
+        <sv-col>
+          <sv-list horizontal celled>
+            <sv-list-item>About Us</sv-list-item>
+            <sv-list-item>Sitemap</sv-list-item>
+            <sv-list-item>Contact</sv-list-item>
+          </sv-list>
+        </sv-col>
+      </sv-row>
 
       <sv-row>
-        <sv-list relaxed horizontal>
-          <sv-list-item>
-            <img class="ui avatar image" src="../assets/img/helen.jpg" slot="pre">
-            <a class="header">Daniel Louise</a>
-          </sv-list-item>
-          <sv-list-item>
-            <img class="ui avatar image" src="../assets/img/christian.jpg" slot="pre">
-            <a class="header">Stevie Feliciano</a>
-          </sv-list-item>
-          <sv-list-item>
-            <img class="ui avatar image" src="../assets/img/daniel.jpg" slot="pre">
-            <a class="header">Elliot Fu</a>
-          </sv-list-item>
-        </sv-list>
+        <sv-col>
+          <sv-list relaxed horizontal size="large">
+            <sv-list-item>
+              <img class="ui avatar image" src="../assets/img/helen.jpg" slot="pre">
+              <a class="header">Daniel Louise</a>
+            </sv-list-item>
+            <sv-list-item>
+              <img class="ui avatar image" src="../assets/img/christian.jpg" slot="pre">
+              <a class="header">Stevie Feliciano</a>
+            </sv-list-item>
+            <sv-list-item>
+              <img class="ui avatar image" src="../assets/img/daniel.jpg" slot="pre">
+              <a class="header">Elliot Fu</a>
+            </sv-list-item>
+          </sv-list>
+        </sv-col>
+      </sv-row>
+
+      <sv-row>
+        <sv-col>
+          <sv-list ordered horizontal>
+            <sv-list-item>
+              <img class="ui avatar image" src="../assets/img/tom.jpg" slot="pre">
+              <div class="header">Steve Jobes</div>
+              50 Points
+            </sv-list-item>
+            <sv-list-item>
+              <img class="ui avatar image" src="../assets/img/stevie.jpg" slot="pre">
+              <div class="header">Stevie Feliciano</div>
+              44 Points
+            </sv-list-item>
+            <sv-list-item>
+              <img class="ui avatar image" src="../assets/img/jenny.jpg" slot="pre">
+              <div class="header">Jenny Hess</div>
+              11 Points
+            </sv-list-item>
+          </sv-list>
+        </sv-col>
       </sv-row>
 
       <sv-row column="2">
@@ -77,7 +129,7 @@
         </sv-col>
 
         <sv-col>
-          <sv-list relaxed divided>
+          <sv-list relaxed divided class="left-aligned-list">
             <sv-list-item>
               <sv-icon with-icon="github" size="large" class="middle aligned" slot="pre"></sv-icon>
               <a class="header">Semantic-Org/Semantic-UI</a>
@@ -168,7 +220,7 @@
       </sv-row>
 
       <sv-row>
-        <sv-col width="8">
+        <sv-col width="9">
           <sv-list relaxed class="left-aligned-list">
             <sv-list-item>
               <img class="ui avatar image" src="../assets/img/helen.jpg" slot="pre">
@@ -188,7 +240,7 @@
           </sv-list>
         </sv-col>
 
-        <sv-col width="5">
+        <sv-col width="4">
           <sv-list divided class="middle aligned left-aligned-list">
             <sv-list-item>
               <img class="ui avatar image" src="../assets/img/helen.jpg" slot="pre">
@@ -204,9 +256,66 @@
             </sv-list-item>
           </sv-list>
         </sv-col>
+      </sv-row>
 
-        <!--TODO: Celled-->
-        <sv-col></sv-col>
+      <sv-row>
+        <sv-col width="4">
+          <sv-list celled class="middle aligned left-aligned-list">
+            <sv-list-item>
+              <img class="ui avatar image" src="../assets/img/helen.jpg" slot="pre">
+              <a class="header">Daniel Louise</a>
+            </sv-list-item>
+            <sv-list-item>
+              <img class="ui avatar image" src="../assets/img/christian.jpg" slot="pre">
+              <a class="header">Stevie Feliciano</a>
+            </sv-list-item>
+            <sv-list-item>
+              <img class="ui avatar image" src="../assets/img/daniel.jpg" slot="pre">
+              <a class="header">Elliot Fu</a>
+            </sv-list-item>
+          </sv-list>
+        </sv-col>
+
+        <sv-col width="5" class="left-aligned-list">
+          <sv-list celled ordered>
+            <sv-list-item>Cats</sv-list-item>
+            <sv-list-item>Horses</sv-list-item>
+            <sv-list-item>Dogs
+              <sv-list inline ordered>
+                <sv-list-item>Labradoodles</sv-list-item>
+                <sv-list-item>Shiba Inu</sv-list-item>
+                <sv-list-item>Mastiff</sv-list-item>
+              </sv-list>
+            </sv-list-item>
+          </sv-list>
+        </sv-col>
+      </sv-row>
+
+      <sv-row>
+        <sv-col class="left-aligned-list">
+          <sv-list divided class="middle aligned">
+            <sv-list-item floated="right">
+              <sv-button slot="float" compact>Add</sv-button>
+              <img class="ui avatar image" src="../assets/img/lena.png" slot="pre">
+              Lena
+            </sv-list-item>
+            <sv-list-item floated="right">
+              <sv-button slot="float" compact>Add</sv-button>
+              <img class="ui avatar image" src="../assets/img/lindsay.png" slot="pre">
+              Lindsay
+            </sv-list-item>
+            <sv-list-item floated="right">
+              <sv-button slot="float" compact>Add</sv-button>
+              <img class="ui avatar image" src="../assets/img/mark.png" slot="pre">
+              Mark
+            </sv-list-item>
+            <sv-list-item floated="right">
+              <sv-button slot="float" compact>Add</sv-button>
+              <img class="ui avatar image" src="../assets/img/molly.png" slot="pre">
+              Molly
+            </sv-list-item>
+          </sv-list>
+        </sv-col>
       </sv-row>
 
     </sv-grid>
@@ -222,7 +331,7 @@
   }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" rel="stylesheet/stylus">
   .left-aligned-list
     text-align: left
 </style>
