@@ -7,6 +7,7 @@
 <script>
   export default {
     name: 'SvIconGroup',
+    componentName: 'SvIconGroup',
     props: {
       size: String
     }

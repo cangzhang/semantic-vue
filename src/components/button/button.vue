@@ -35,6 +35,7 @@
 
   export default {
     name: 'SvButton',
+    componentName: 'SvButton',
     props: {
       theme: String,
       tabindex: Number,

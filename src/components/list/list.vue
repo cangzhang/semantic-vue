@@ -25,6 +25,7 @@
 
   export default {
     name: 'SvList',
+    componentName: 'SvList',
     props: {
       inline: Boolean,
       relaxed: Boolean,

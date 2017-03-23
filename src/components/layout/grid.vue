@@ -22,6 +22,7 @@
 
   export default {
     name: 'SvGrid',
+    componentName: 'SvGrid',
     props: {
       column: [Number, String],
       stackable: Boolean,

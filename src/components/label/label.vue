@@ -58,6 +58,7 @@
 
   export default {
     name: 'SvLabel',
+    componentName: 'SvLabel',
     props: {
       pointTo: [String, Boolean],
       type: String,

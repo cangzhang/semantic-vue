@@ -22,6 +22,7 @@
 
   export default {
     name: 'SvAnimatedButton',
+    componentName: 'SvAnimatedButton',
     props: {
       tabindex: Number,
       hiddenText: String,

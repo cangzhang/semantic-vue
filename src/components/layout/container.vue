@@ -12,6 +12,7 @@
 <script>
   export default {
     name: 'SvContainer',
+    componentName: 'SvContainer',
     props: {
       text: Boolean
     }

@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import components from './components/index'
 
 components.map(component => {
-  Vue.component(component.name, component)
+  Vue.component(component.componentName, component)
 })
 
 Vue.use(VueRouter)

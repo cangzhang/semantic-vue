@@ -28,6 +28,7 @@
 
   export default {
     name: 'SvIcon',
+    componentName: 'SvIcon',
     props: {
       size: String,
       withIcon: String,

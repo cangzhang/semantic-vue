@@ -29,6 +29,7 @@
 
   export default {
     name: 'SvInput',
+    componentName: 'SvInput',
     props: {
       value: [String, Number],
       disabled: Boolean,

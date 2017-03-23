@@ -38,6 +38,7 @@
 
   export default {
     name: 'SvLabeledButton',
+    componentName: 'SvLabeledButton',
     props: {
       tabindex: Number,
       theme: String,

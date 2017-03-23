@@ -34,6 +34,7 @@
   const ALIGNDIRT = ['', 'top', 'middle', 'bottom']
   export default {
     name: 'SvListItem',
+    componentName: 'SvListItem',
     props: {
       asLink: Boolean,
       active: Boolean,

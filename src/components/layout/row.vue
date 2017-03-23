@@ -9,6 +9,7 @@
 
   export default {
     name: 'SvRow',
+    componentName: 'SvRow',
     props: {
       column: [Number, String]
     },

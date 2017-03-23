@@ -19,6 +19,7 @@
   //TODO: vertical, Inverted
   export default {
     name: 'SvDivider',
+    componentName: 'SvDivider',
     props: {
       horizontal: {
         type: Boolean,

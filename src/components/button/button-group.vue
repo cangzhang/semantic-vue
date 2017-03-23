@@ -20,6 +20,7 @@
 <script>
   export default {
     name: 'SvButtonGroup',
+    componentName: 'SvButtonGroup',
     props: {
       basic: Boolean,
       iconButtonGroup: Boolean,

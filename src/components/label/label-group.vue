@@ -7,6 +7,7 @@
 <script>
   export default {
     name: 'SvLabelGroup',
+    componentName: 'SvLabelGroup',
     props: {}
   }
 </script>

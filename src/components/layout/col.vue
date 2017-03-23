@@ -9,6 +9,7 @@
 
   export default {
     name: 'SvCol',
+    componentName: 'SvCol',
     props: {
       width: [String, Number]
     },
