@@ -1,7 +1,7 @@
 import './assets/app.scss'
 
 import {Vue, VueRouter} from 'entry'
-import routes from './tpl/routes'
+import routes from './examples/routes'
 import App from './App'
 
 const router = new VueRouter({

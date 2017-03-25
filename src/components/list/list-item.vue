@@ -1,41 +1,44 @@
 <template>
-  <div class="item"
-       v-if="!$parent.bulleted && !$parent.ordered && !$parent.link || ($parent.horizontal && $parent.ordered)">
+  <a :class="[{ 'active': !!active, 'item': true }]"
+     v-if="$parent.asLink || $parent.link">
+    <slot></slot>
+  </a>
 
+  <div class="item" v-else-if="bare">
+    <slot></slot>
+  </div>
+
+  <div class="item" v-else>
+    <!--float-->
     <div :class="[floatedClass, {'content' : true }]" v-if="!!floated">
       <slot name="float"></slot>
     </div>
 
+    <!--for icon/img-->
     <slot name="pre"></slot>
+
+    <!--as <a> element-->
     <a class="content" v-if="asLink">
       <slot></slot>
     </a>
-    <div v-else
-         :class="alignedClass"
-         class="content">
+
+    <!--with complete structure-->
+    <div v-else :class="[alignedClass, { 'content': true }]">
       <slot></slot>
+      <div class="description" v-if="$slots.desc">
+        <slot name="desc"></slot>
+      </div>
     </div>
-  </div>
-
-  <a :class="[{ 'active': !!active }]" class="item"
-     v-else-if="$parent.ordered || $parent.bulleted && $parent.horizontal || $parent.link">
-    <slot></slot>
-  </a>
-
-  <!--for bulleted-->
-  <div class="item" v-else>
-    <slot></slot>
   </div>
 </template>
 
 <script>
-  //TODO: get rid of attributes of inline list; situations
-
-  const ALIGNDIRT = ['', 'top', 'middle', 'bottom']
+  const ALIGN_DIRECTIONS = ['', 'top', 'middle', 'bottom']
   export default {
     name: 'SvListItem',
     componentName: 'SvListItem',
     props: {
+      bare: Boolean,
       asLink: Boolean,
       active: Boolean,
       aligned: String,
@@ -44,8 +47,8 @@
     computed: {
       alignedClass() {
         if (!!this.aligned) {
-          let index = ALIGNDIRT.indexOf(this.aligned)
-          return index >= 0 ? ALIGNDIRT[index] + ' aligned' : ''
+          let index = ALIGN_DIRECTIONS.indexOf(this.aligned)
+          return index >= 0 ? ALIGN_DIRECTIONS[index] + ' aligned' : ''
         }
       },
       floatedClass() {

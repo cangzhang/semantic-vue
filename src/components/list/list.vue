@@ -30,7 +30,6 @@
       inline: Boolean,
       relaxed: Boolean,
       veryRelaxed: Boolean,
-      veryRelaxed: Boolean,
       divided: Boolean,
       bulleted: Boolean,
       ordered: Boolean,
