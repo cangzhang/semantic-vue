@@ -41,7 +41,12 @@
         return util.getSize(this.size)
       }
     },
-    methods: {}
+    methods: {},
+    mounted() {
+      let el = this.$el
+//      style = window.getComputedStyle(el)
+//      console.log(this)
+    }
   }
 </script>
 
