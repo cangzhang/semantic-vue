@@ -13,6 +13,7 @@ import svIcon from './icon/icon.vue'
 import svIconGroup from './icon/icon-group.vue'
 import svList from './list/list.vue'
 import svListItem from './list/list-item.vue'
+import svLoader from './loader/loader.vue'
 
 export default [
   svButton,
@@ -29,5 +30,6 @@ export default [
   svIcon,
   svIconGroup,
   svList,
-  svListItem
+  svListItem,
+  svLoader
 ]

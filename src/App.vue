@@ -16,6 +16,10 @@
       <router-link to="/list">
         <sv-button compact>List</sv-button>
       </router-link>
+      <router-link to="/loader">
+        <sv-button compact>Loader</sv-button>
+      </router-link>
+
       <sv-divider horizontal>Content</sv-divider>
     </sv-row>
     <br>

@@ -132,18 +132,16 @@
 
         <sv-col class="left-aligned-list">
           <sv-list celled ordered>
-            <sv-list-item v-for="pet in pets">
+            <sv-list-item v-for="(pet, i) in pets" :key="i">
               {{ pet.Species }}
-
               <sv-list v-if="pet.Breeds">
-                <sv-list-item v-for="breed in pet.Breeds">{{ breed }}</sv-list-item>
+              <sv-list-item v-for="(breed, key) in pet.Breeds" :key="key">{{ breed }}</sv-list-item>
               </sv-list>
             </sv-list-item>
             <sv-list-item>Cats</sv-list-item>
             <sv-list-item>Horses</sv-list-item>
             <sv-list-item>
               Dogs
-
               <sv-list inline ordered>
                 <sv-list-item>Labradoodles</sv-list-item>
                 <sv-list-item>Shiba Inu</sv-list-item>
@@ -343,12 +341,15 @@
       return {
         pets: [
           {
+            id: 1,
             Species: 'Cats'
           },
           {
+            id: 2,
             Species: 'Horses',
           },
           {
+            id: 3,
             Species: 'Dogs',
             Breeds: ['Labradoodles', 'Shiba Inu', 'Mastiff']
           },
