@@ -110,12 +110,14 @@
             <sv-list-item>Inviting Friends</sv-list-item>
             <sv-list-item bare>
               Benefits
+
               <sv-list bulleted inline>
                 <sv-list-item>
                   <a class="item" href="#">Link to somewhere</a>
                 </sv-list-item>
                 <sv-list-item bare>
                   Rebates
+
                   <sv-list bulleted inline>
                     <sv-list-item>Rebates</sv-list-item>
                     <sv-list-item>Discounts</sv-list-item>
@@ -128,22 +130,25 @@
           </sv-list>
         </sv-col>
 
-        <sv-col>
-          <sv-list relaxed divided class="left-aligned-list">
-            <sv-list-item>
-              <sv-icon with-icon="github" size="large" class="middle aligned" slot="pre"></sv-icon>
-              <a class="header">Semantic-Org/Semantic-UI</a>
-              <div slot="desc">Updated 10 mins ago</div>
+        <sv-col class="left-aligned-list">
+          <sv-list celled ordered>
+            <sv-list-item v-for="pet in pets">
+              {{ pet.Species }}
+
+              <sv-list v-if="pet.Breeds">
+                <sv-list-item v-for="breed in pet.Breeds">{{ breed }}</sv-list-item>
+              </sv-list>
             </sv-list-item>
+            <sv-list-item>Cats</sv-list-item>
+            <sv-list-item>Horses</sv-list-item>
             <sv-list-item>
-              <sv-icon with-icon="github" size="large" class="middle aligned" slot="pre"></sv-icon>
-              <a class="header">Semantic-Org/Semantic-UI-Docs</a>
-              <div slot="desc">Updated 22 mins ago</div>
-            </sv-list-item>
-            <sv-list-item>
-              <sv-icon with-icon="github" size="large" class="middle aligned" slot="pre"></sv-icon>
-              <a class="header">Semantic-Org/Semantic-UI-Meteor</a>
-              <div slot="desc">Updated 34 mins ago</div>
+              Dogs
+
+              <sv-list inline ordered>
+                <sv-list-item>Labradoodles</sv-list-item>
+                <sv-list-item>Shiba Inu</sv-list-item>
+                <sv-list-item>Mastiff</sv-list-item>
+              </sv-list>
             </sv-list-item>
           </sv-list>
         </sv-col>
@@ -156,6 +161,7 @@
             <sv-list-item>Introduction</sv-list-item>
             <sv-list-item>
               Languages
+
               <sv-list inline ordered>
                 <sv-list-item>HTML</sv-list-item>
                 <sv-list-item>Javascript</sv-list-item>
@@ -276,23 +282,22 @@
           </sv-list>
         </sv-col>
 
-        <sv-col class="left-aligned-list">
-          <sv-list celled ordered>
-            <sv-list-item v-for="pet in pets">
-              {{ pet.Species }}
-              <sv-list v-if="pet.Breeds">
-                <sv-list-item v-for="breed in pet.Breeds">{{ breed }}</sv-list-item>
-              </sv-list>
-            </sv-list-item>
-            <sv-list-item>Cats</sv-list-item>
-            <sv-list-item>Horses</sv-list-item>
+        <sv-col>
+          <sv-list relaxed divided class="left-aligned-list">
             <sv-list-item>
-              Dogs
-              <sv-list inline ordered>
-                <sv-list-item>Labradoodles</sv-list-item>
-                <sv-list-item>Shiba Inu</sv-list-item>
-                <sv-list-item>Mastiff</sv-list-item>
-              </sv-list>
+              <sv-icon with-icon="github" size="large" class="middle aligned" slot="pre"></sv-icon>
+              <a class="header">Semantic-Org/Semantic-UI</a>
+              <div slot="desc">Updated 10 mins ago</div>
+            </sv-list-item>
+            <sv-list-item>
+              <sv-icon with-icon="github" size="large" class="middle aligned" slot="pre"></sv-icon>
+              <a class="header">Semantic-Org/Semantic-UI-Docs</a>
+              <div slot="desc">Updated 22 mins ago</div>
+            </sv-list-item>
+            <sv-list-item>
+              <sv-icon with-icon="github" size="large" class="middle aligned" slot="pre"></sv-icon>
+              <a class="header">Semantic-Org/Semantic-UI-Meteor</a>
+              <div slot="desc">Updated 34 mins ago</div>
             </sv-list-item>
           </sv-list>
         </sv-col>
@@ -345,7 +350,7 @@
           },
           {
             Species: 'Dogs',
-            Breeds: [ 'Labradoodles', 'Shiba Inu', 'Mastiff']
+            Breeds: ['Labradoodles', 'Shiba Inu', 'Mastiff']
           },
         ]
       }

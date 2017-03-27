@@ -48,6 +48,7 @@
       alignedClass() {
         if (!!this.aligned) {
           let index = ALIGN_DIRECTIONS.indexOf(this.aligned)
+          if (index === 0) return 'middle aligned'
           return index >= 0 ? ALIGN_DIRECTIONS[index] + ' aligned' : ''
         }
       },
