@@ -24,7 +24,7 @@
     </sv-row>
     <br>
 
-    <sv-container class="center aligned">
+    <sv-container>
       <router-view></router-view>
     </sv-container>
 
