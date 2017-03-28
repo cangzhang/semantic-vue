@@ -7,19 +7,19 @@ const headerSize = ['', 'huge', 'large', 'medium', 'small', 'tiny']
 
 const direction = ['', 'up', 'below', 'left', 'right']
 
-function toWord (num) {
+export function toWord (num) {
   return numbers[parseInt(num)]
 }
 
-function getColClass (num) {
+export function getColClass (num) {
   return toWord(parseInt(num)) + 'column'
 }
 
-function getWidthClass (num) {
+export function getWidthClass (num) {
   return toWord(parseInt(num)) + 'wide'
 }
 
-function getSize (size, type) {
+export function getSize (size, type) {
   if (!!size) {
     let realSize = parseInt(size)
     if (isNaN(realSize)) {
@@ -36,7 +36,7 @@ function getSize (size, type) {
   }
 }
 
-function getPointingTo (dir) {
+export function getPointingTo (dir) {
   if (!!dir) {
     if (typeof dir === 'boolean' || dir === 'up') dir = ''
 
@@ -45,12 +45,4 @@ function getPointingTo (dir) {
       return index <= 2 ? 'pointing ' + dir : dir + ' pointing'
     }
   }
-}
-
-export default {
-  toWord,
-  getColClass,
-  getWidthClass,
-  getSize,
-  getPointingTo
 }

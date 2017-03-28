@@ -12,13 +12,11 @@
       'loader': true
     }]">
     {{ withText }}
-
   </div>
 </template>
 
 <script>
-  //TODO: adjust size
-  import util from '../../utils/util'
+  import {getSize} from '../../utils/util'
 
   export default {
     name: 'SvLoader',
@@ -38,14 +36,8 @@
         if (!!this.inline) return ' inline'
       },
       sizeClass() {
-        return util.getSize(this.size)
+        return getSize(this.size)
       }
-    },
-    methods: {},
-    mounted() {
-      let el = this.$el
-//      style = window.getComputedStyle(el)
-//      console.log(this)
     }
   }
 </script>

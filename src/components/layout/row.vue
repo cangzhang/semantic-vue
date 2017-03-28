@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import util from '../../utils/util'
+  import {getColClass} from '../../utils/util'
 
   export default {
     name: 'SvRow',
@@ -16,7 +16,7 @@
     computed: {
       colClass() {
         if (!!this.column) {
-          return util.getColClass(this.column)
+          return getColClass(this.column)
         }
       }
     }

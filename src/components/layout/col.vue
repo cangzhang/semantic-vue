@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import util from '../../utils/util'
+  import {getWidthClass} from '../../utils/util'
 
   export default {
     name: 'SvCol',
@@ -16,7 +16,7 @@
     computed: {
       wide() {
         if (!!this.width) {
-          return util.getWidthClass(this.width)
+          return getWidthClass(this.width)
         }
       }
     }

@@ -18,7 +18,7 @@
 
 <script>
   //TODO: consecutive responsive
-  import util from '../../utils/util'
+  import {getColClass} from '../../utils/util'
 
   export default {
     name: 'SvGrid',
@@ -34,7 +34,7 @@
     computed: {
       colNum() {
         if (!!this.column) {
-          return util.getColClass(this.column)
+          return getColClass(this.column)
         }
       },
       dividedClass() {

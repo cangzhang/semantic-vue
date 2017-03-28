@@ -25,7 +25,7 @@
 
 <script>
   //TODO: inverted labeled autofocus
-  import util from '../../utils/util'
+  import {getSize} from '../../utils/util'
 
   export default {
     name: 'SvInput',
@@ -48,7 +48,7 @@
     },
     computed: {
       realSize() {
-        return util.getSize(this.size)
+        return getSize(this.size)
       }
     },
     data() {

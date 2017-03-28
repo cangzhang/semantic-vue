@@ -21,7 +21,7 @@
 </template>
 
 <script>
-  import util from '../../utils/util'
+  import {getSize} from '../../utils/util'
 
   export default {
     name: 'SvList',
@@ -44,7 +44,7 @@
     },
     computed: {
       sizeClass() {
-        return util.getSize(this.size)
+        return getSize(this.size)
       }
     },
     methods: {}

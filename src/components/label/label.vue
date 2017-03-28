@@ -52,7 +52,7 @@
 </template>
 
 <script>
-  import util from '../../utils/util'
+  import {getPointingTo, getSize} from '../../utils/util'
 
   const DIRT = ['', 'top', 'bottom', 'left', 'right']
 
@@ -79,7 +79,7 @@
     },
     computed: {
       pointingTo() {
-        return util.getPointingTo(this.pointTo)
+        return getPointingTo(this.pointTo)
       },
       positionClass() {
         let index = DIRT.indexOf(this.position)
@@ -91,7 +91,7 @@
           return this.attached + ' attached'
       },
       sizeClass() {
-        return util.getSize(this.size)
+        return getSize(this.size)
       }
     },
     methods: {

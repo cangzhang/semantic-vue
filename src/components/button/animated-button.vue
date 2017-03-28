@@ -18,7 +18,7 @@
 
 <script>
   //TODO
-  import util from '../../utils/util'
+  import {getSize} from '../../utils/util'
 
   export default {
     name: 'SvAnimatedButton',
@@ -32,7 +32,7 @@
     },
     computed: {
       realSize() {
-        return util.getSize(this.size)
+        return getSize(this.size)
       }
     },
     methods: {

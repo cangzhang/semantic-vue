@@ -34,7 +34,7 @@
 </template>
 
 <script>
-  import util from '../../utils/util'
+  import {getSize} from '../../utils/util'
 
   export default {
     name: 'SvLabeledButton',
@@ -57,7 +57,7 @@
         return ''
       },
       realSize() {
-        return util.getSize(this.size)
+        return getSize(this.size)
       }
     },
     methods: {

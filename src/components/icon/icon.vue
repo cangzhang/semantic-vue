@@ -24,7 +24,7 @@
 
 <script>
   //TODO: inverted
-  import util from '../../utils/util'
+  import {getSize} from '../../utils/util'
 
   export default {
     name: 'SvIcon',
@@ -46,7 +46,7 @@
     },
     computed: {
       sizeClass() {
-        return util.getSize(this.size)
+        return getSize(this.size)
       }
     },
     methods: {
