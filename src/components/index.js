@@ -15,6 +15,7 @@ import svList from './list/list.vue'
 import svListItem from './list/list-item.vue'
 import svLoader from './loader/loader.vue'
 import svRail from './rail/rail.vue'
+import svReveal from './reveal/reveal.vue'
 
 export default [
   svButton,
@@ -33,5 +34,6 @@ export default [
   svList,
   svListItem,
   svLoader,
-  svRail
+  svRail,
+  svReveal
 ]

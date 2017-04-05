@@ -60,8 +60,8 @@
       </sv-col>
     </sv-row>
 
-    <sv-row column="4">
-      <sv-col>
+    <sv-row>
+      <sv-col width="4">
         <div class="ui image">
           <sv-label corner="left" theme="teal">
             <sv-icon with-icon="heart"></sv-icon>
@@ -70,7 +70,7 @@
         </div>
       </sv-col>
 
-      <sv-col>
+      <sv-col width="4">
         <div class="ui image">
           <img class="logo" src="../assets/img/square-image.png">
           <sv-label corner="right" theme="red">
@@ -79,7 +79,7 @@
         </div>
       </sv-col>
 
-      <sv-col>
+      <sv-col width="4">
         <div class="ui image">
           <img class="logo" src="../assets/img/square-image.png">
           <sv-label ribbon theme="blue">
@@ -88,7 +88,7 @@
         </div>
       </sv-col>
 
-      <sv-col>
+      <sv-col width="3">
         <sv-label attached="top right">ATTACHED</sv-label>
         <div class="ui image">
           <img class="logo" src="../assets/img/square-image.png">
