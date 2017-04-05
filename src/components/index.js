@@ -16,6 +16,8 @@ import svListItem from './list/list-item.vue'
 import svLoader from './loader/loader.vue'
 import svRail from './rail/rail.vue'
 import svReveal from './reveal/reveal.vue'
+import svSegment from './segment/segment.vue'
+import svSegmentGroup from './segment/segment-group.vue'
 
 export default [
   svButton,
@@ -35,5 +37,7 @@ export default [
   svListItem,
   svLoader,
   svRail,
-  svReveal
+  svReveal,
+  svSegment,
+  svSegmentGroup
 ]

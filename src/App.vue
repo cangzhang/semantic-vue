@@ -22,6 +22,9 @@
       <router-link to="/reveal">
         <sv-button compact>Reveal</sv-button>
       </router-link>
+      <router-link to="/segment">
+        <sv-button compact>Segment</sv-button>
+      </router-link>
 
       <sv-divider horizontal>Content</sv-divider>
     </sv-row>
