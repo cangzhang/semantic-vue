@@ -5,6 +5,7 @@
               fluid: !!fluid,
               compact: !!compact,
             },
+            floatedClass,
             realSize,
             {
               ui: true,
@@ -54,6 +55,7 @@
       toggle: Boolean,
       size: [String, Number],
       attached: String,
+      floated: String,
     },
     computed: {
       verticallyAttached() {
@@ -63,6 +65,12 @@
       },
       realSize() {
         return getSize(this.size)
+      },
+      floatedClass() {
+        if (typeof this.floated !== 'undefined') {
+          if (this.floated === 'right') return 'right floated'
+          return 'left floated'
+        }
       }
     },
     methods: {

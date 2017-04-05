@@ -1,5 +1,13 @@
 <template>
-  <div class="ui segments">
+  <div :class="[{
+    'ui': true,
+    horizontal: !!horizontal,
+    raised: !!raised,
+    stacked: !!stacked,
+    compact: !!compact,
+    piled: !!piled,
+    'segments': true
+  }]">
     <slot></slot>
   </div>
 </template>
@@ -8,7 +16,13 @@
   export default {
     name: 'SvSegmentGroup',
     componentName: 'SvSegmentGroup',
-    props: {},
+    props: {
+      horizontal: Boolean,
+      raised: Boolean,
+      stacked: Boolean,
+      piled: Boolean,
+      compact: Boolean
+    },
     computed: {},
     methods: {}
   }

@@ -39,10 +39,26 @@ export function getSize (size, type) {
 export function getPointingTo (dir) {
   if (!!dir) {
     if (typeof dir === 'boolean' || dir === 'up') dir = ''
-
     let index = direction.indexOf(dir)
     if (index >= 0) {
       return index <= 2 ? 'pointing ' + dir : dir + ' pointing'
     }
   }
+}
+
+export function getAlignedClass(aligned) {
+  if (typeof aligned !== 'undefined') {
+    if (['left', 'center', 'right'].indexOf((aligned).toLowerCase()) >= 0)
+      return (aligned).toLowerCase() + ' aligned'
+    return 'center aligned'
+  }
+  return ''
+}
+
+export function getFloatedClass(floated) {
+  if (typeof floated !== 'undefined') {
+    if ((floated).toLowerCase() === 'right') return 'right floated'
+    return 'left floated'
+  }
+  return ''
 }
