@@ -25,6 +25,9 @@
       <router-link to="/segment">
         <sv-button compact>Segment</sv-button>
       </router-link>
+      <router-link to="/step">
+        <sv-button compact>Step</sv-button>
+      </router-link>
 
       <sv-divider horizontal>Content</sv-divider>
     </sv-row>

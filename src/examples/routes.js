@@ -5,6 +5,7 @@ import List from './svlist.vue'
 import Loader from './svloader.vue'
 import Reveal from './svreveal.vue'
 import Segment from './svsegment.vue'
+import Step from './svstep.vue'
 
 const routes = [
   {path: '/button', component: Buttons},
@@ -14,6 +15,7 @@ const routes = [
   {path: '/loader', component: Loader},
   {path: '/reveal', component: Reveal},
   {path: '/segment', component: Segment},
+  {path: '/step', component: Step},
 ]
 
 export default routes
