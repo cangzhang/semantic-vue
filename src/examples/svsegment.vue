@@ -150,9 +150,7 @@
       <p>Valar Morghulis</p>
     </sv-segment>
     <sv-segment loading>
-      <p>Bottom</p>
-      <p>Bottom</p>
-      <p>Bottom</p>
+      <div class="loading-content"><p>Loading</p></div>
     </sv-segment>
 
     <sv-segment-group>
@@ -254,6 +252,7 @@
 <style lang="stylus" scoped>
   .bottom-row
     margin-bottom: 50px
-  .circular-seg
+
+  .circular-seg, .loading-content
     height: 150px
 </style>

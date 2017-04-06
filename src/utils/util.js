@@ -8,6 +8,8 @@ const headerSize = ['', 'huge', 'large', 'medium', 'small', 'tiny']
 const direction = ['', 'up', 'below', 'left', 'right']
 
 export function toWord (num) {
+  if (numbers.indexOf(num) >= 0)
+    return num
   return numbers[parseInt(num)]
 }
 
@@ -61,4 +63,13 @@ export function getFloatedClass(floated) {
     return 'left floated'
   }
   return ''
+}
+
+export function getAttachedClass (attached) {
+  if (typeof attached !== 'undefined') {
+    let attachTo = attached.toLowerCase()
+    if (['', 'top', 'bottom'].indexOf(attachTo) >= 0)
+      return attachTo + ' attached'
+    return ''
+  }
 }
