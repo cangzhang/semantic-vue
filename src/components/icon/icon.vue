@@ -1,7 +1,5 @@
 <template>
-  <i :class="[
-       sizeClass,
-       theme,
+  <i :class="[ sizeClass, theme,
        {
          corner: !!corner,
          disabled: !!disabled,
@@ -13,12 +11,7 @@
          flipped: !!flipped,
          rotated: !!rotated,
        },
-       withIcon,
-       {
-         icon: true
-       }
-       ]"
-     @click="handleClick">
+       withIcon, { 'icon': true }]" @click="handleClick">
   </i>
 </template>
 

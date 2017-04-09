@@ -58,16 +58,15 @@
   }
 </script>
 
-<style lang="scss" rel="stylesheet/scss">
-  #app {
+<style lang="stylus" rel="stylesheet/scss">
+  #app
     margin-left: 100px;
     margin-right: 100px;
+    margin-bottom: 50px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
     margin-top: 50px;
-    .topNav {
+    .topNav
       text-align: center;
-    }
-  }
 </style>
