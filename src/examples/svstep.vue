@@ -72,26 +72,6 @@
       </sv-step-group>
     </sv-row>
 
-    <sv-grid column="2" class="bordered-steps">
-      <sv-col>
-        <sv-step-group fluid vertical>
-          <sv-step completed>
-            <sv-icon slot="icon" with-icon="plane"></sv-icon>
-            <span slot="title">Shipping</span>
-            <span slot="desc">Choose your shipping options</span>
-          </sv-step>
-          <sv-step>
-            <sv-icon slot="icon" with-icon="dollar"></sv-icon>
-            <span slot="title">Billing</span>
-            <span slot="desc">Enter billing information</span>
-          </sv-step>
-        </sv-step-group>
-      </sv-col>
-      <sv-col>
-        <div>The steps take up the entire column width</div>
-      </sv-col>
-    </sv-grid>
-
     <sv-container class="bordered-steps">
       <sv-step-group number="3" attached="top">
         <sv-step>
@@ -111,7 +91,6 @@
       </sv-step-group>
       <sv-segment attached inverted>
         This is the content.
-
       </sv-segment>
       <sv-step-group number="3" attached="bottom">
         <sv-step>
@@ -131,25 +110,42 @@
       </sv-step-group>
     </sv-container>
 
-    <sv-col>
-      <sv-step-group vertical>
-        <sv-step completed>
-          <sv-icon slot="icon" with-icon="truck"></sv-icon>
-          <span slot="title">Shipping</span>
-          <span slot="desc">Choose your shipping options</span>
-        </sv-step>
-        <sv-step completed>
-          <sv-icon slot="icon" with-icon="payment"></sv-icon>
-          <span slot="title">Billing</span>
-          <span slot="desc">Enter billing information</span>
-        </sv-step>
-        <sv-step active>
-          <sv-icon slot="icon" with-icon="info"></sv-icon>
-          <span slot="title">Confirm Order</span>
-          <span slot="desc">Verify order details</span>
-        </sv-step>
-      </sv-step-group>
-    </sv-col>
+    <sv-grid column="2" class="bordered-steps">
+      <sv-col>
+        <sv-step-group vertical>
+          <sv-step completed>
+            <sv-icon slot="icon" with-icon="truck"></sv-icon>
+            <span slot="title">Shipping</span>
+            <span slot="desc">Choose your shipping options</span>
+          </sv-step>
+          <sv-step completed>
+            <sv-icon slot="icon" with-icon="payment"></sv-icon>
+            <span slot="title">Billing</span>
+            <span slot="desc">Enter billing information</span>
+          </sv-step>
+          <sv-step active>
+            <sv-icon slot="icon" with-icon="info"></sv-icon>
+            <span slot="title">Confirm Order</span>
+            <span slot="desc">Verify order details</span>
+          </sv-step>
+        </sv-step-group>
+      </sv-col>
+
+      <sv-col>
+        <sv-step-group fluid vertical>
+          <sv-step completed>
+            <sv-icon slot="icon" with-icon="plane"></sv-icon>
+            <span slot="title">Shipping</span>
+            <span slot="desc">Choose your shipping options</span>
+          </sv-step>
+          <sv-step>
+            <sv-icon slot="icon" with-icon="dollar"></sv-icon>
+            <span slot="title">Billing</span>
+            <span slot="desc">Enter billing information</span>
+          </sv-step>
+        </sv-step-group>
+      </sv-col>
+    </sv-grid>
   </div>
 </template>
 
