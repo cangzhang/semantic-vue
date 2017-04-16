@@ -20,6 +20,8 @@ import svSegment from './segment/segment.vue'
 import svSegmentGroup from './segment/segment-group.vue'
 import svStep from './step/step.vue'
 import svStepGroup from './step/step-group.vue'
+import svAccordion from './accordion/accordion.vue'
+import svAccordionGroup from './accordion/accordion-group.vue'
 
 export default [
   svButton,
@@ -43,5 +45,7 @@ export default [
   svSegment,
   svSegmentGroup,
   svStep,
-  svStepGroup
+  svStepGroup,
+  svAccordion,
+  svAccordionGroup
 ]
