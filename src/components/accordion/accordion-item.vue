@@ -5,7 +5,7 @@
       <slot name="title"></slot>
     </div>
     <div class="content" :class="{'active': showContent}">
-      <transition name="accordion">
+      <transition name="ease">
         <slot name="content" v-if="showContent"></slot>
       </transition>
     </div>
@@ -14,8 +14,8 @@
 
 <script>
   export default {
-    name: 'SvAccordion',
-    componentName: 'SvAccordion',
+    name: 'SvAccordionItem',
+    componentName: 'SvAccordionItem',
     props: {
       withIcon: {
         type: String,
@@ -40,4 +40,15 @@
   }
 </script>
 
-<style lang="stylus"></style>
+<style lang="stylus">
+  .ease-enter-active
+    transition: all 0.5s ease
+
+  .ease-leave-active
+    transition: all 0.5s ease
+
+  .ease-enter, .ease-leave-to
+    transition: all 0.5s ease
+    opacity: 0
+
+</style>
