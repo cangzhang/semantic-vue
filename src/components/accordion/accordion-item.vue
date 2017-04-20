@@ -13,42 +13,38 @@
 </template>
 
 <script>
-  export default {
-    name: 'SvAccordionItem',
-    componentName: 'SvAccordionItem',
-    props: {
-      withIcon: {
-        type: String,
-        default: 'dropdown'
-      },
-      active: {
-        type: Boolean,
-        default: false
-      },
+export default {
+  name: 'SvAccordionItem',
+  componentName: 'SvAccordionItem',
+  props: {
+    withIcon: {
+      type: String,
+      default: 'dropdown'
     },
-    data() {
-      return {
-        showContent: false,
-      }
+    active: {
+      type: Boolean,
+      default: false
     },
-    computed: {},
-    methods: {
-      toggleAccordion() {
-        this.showContent = !this.showContent
-      }
+  },
+  data() {
+    return {
+      showContent: false,
+    }
+  },
+  computed: {},
+  methods: {
+    toggleAccordion() {
+      this.showContent = !this.showContent
     }
   }
+}
 </script>
 
 <style lang="stylus">
-  .ease-enter-active
-    transition: all 0.5s ease
-
-  .ease-leave-active
-    transition: all 0.5s ease
+  .ease-enter-active, .ease-leave-active
+    transition: all 0.3s ease
 
   .ease-enter, .ease-leave-to
-    transition: all 0.5s ease
     opacity: 0
 
 </style>
