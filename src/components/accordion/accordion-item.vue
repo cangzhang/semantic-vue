@@ -1,10 +1,10 @@
 <template>
   <div class="sv-accordion">
-    <div class="title" @click="toggleAccordion" :class="{'active': showContent}">
+    <div class="title" @click="toggleAccordion" :class="activeClass">
       <sv-icon :with-icon="withIcon"></sv-icon>
       <slot name="title"></slot>
     </div>
-    <div class="content" :class="{'active': showContent}">
+    <div class="content sv-accordion-content" :class="activeClass">
       <transition name="ease">
         <slot name="content" v-if="showContent"></slot>
       </transition>
@@ -31,24 +31,28 @@
         showContent: false,
       }
     },
-    computed: {},
+    computed: {
+      activeClass() {
+        return this.showContent ? 'active' : ''
+      }
+    },
     methods: {
       toggleAccordion() {
         this.showContent = !this.showContent
       }
+    },
+    mounted() {
     }
   }
 </script>
 
-<style lang="stylus">
-  .ease-enter-active
-    transition: all 0.5s ease
+<style lang="stylus" scoped>
+  .ease-enter-active, .ease-leave-active
+    transition: all 0.3s ease
 
-  .ease-leave-active
-    transition: all 0.5s ease
-
-  .ease-enter, .ease-leave-to
-    transition: all 0.5s ease
+  .ease-enter, .fade-leave-to
     opacity: 0
 
+  .sv-accordion-content
+    padding-bottom: 1em !important
 </style>

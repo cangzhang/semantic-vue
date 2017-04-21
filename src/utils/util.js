@@ -48,7 +48,7 @@ export function getPointingTo (dir) {
   }
 }
 
-export function getAlignedClass(aligned) {
+export function getAlignedClass (aligned) {
   if (typeof aligned !== 'undefined') {
     if (['left', 'center', 'right'].indexOf((aligned).toLowerCase()) >= 0)
       return (aligned).toLowerCase() + ' aligned'
@@ -57,7 +57,7 @@ export function getAlignedClass(aligned) {
   return ''
 }
 
-export function getFloatedClass(floated) {
+export function getFloatedClass (floated) {
   if (typeof floated !== 'undefined') {
     if ((floated).toLowerCase() === 'right') return 'right floated'
     return 'left floated'
