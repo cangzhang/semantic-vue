@@ -1,10 +1,10 @@
 <template>
   <div class="sv-accordion">
     <div class="title" @click="toggleAccordion" :class="activeClass">
-      <sv-icon :with-icon="withIcon"></sv-icon>
+      <i class="dropdown icon"></i>
       <slot name="title"></slot>
     </div>
-    <div class="content sv-accordion-content" :class="activeClass">
+    <div class="content sv-accordion-content active" :class="">
       <transition name="ease">
         <slot name="content" v-if="showContent"></slot>
       </transition>
@@ -17,10 +17,10 @@
     name: 'SvAccordionItem',
     componentName: 'SvAccordionItem',
     props: {
-      withIcon: {
-        type: String,
-        default: 'dropdown'
-      },
+      // withIcon: {
+      //   type: String,
+      //   default: 'dropdown'
+      // },
       active: {
         type: Boolean,
         default: false
@@ -28,7 +28,7 @@
     },
     data() {
       return {
-        showContent: false,
+        showContent: false
       }
     },
     computed: {
@@ -38,11 +38,14 @@
     },
     methods: {
       toggleAccordion() {
-        this.showContent = !this.showContent
+        if (this.showContent) {
+          this.showContent = false
+        } else {
+          this.showContent = true
+        }
       }
     },
-    mounted() {
-    }
+    mounted() {}
   }
 </script>
 
@@ -50,7 +53,7 @@
   .ease-enter-active, .ease-leave-active
     transition: all 0.3s ease
 
-  .ease-enter, .fade-leave-to
+  .ease-enter, .ease-leave-to
     opacity: 0
 
   .sv-accordion-content
