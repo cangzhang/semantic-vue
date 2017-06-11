@@ -21,7 +21,6 @@ import svSegmentGroup from './segment/segment-group.vue'
 import svStep from './step/step.vue'
 import svStepGroup from './step/step-group.vue'
 import svAccordionItem from './accordion/accordion-item.vue'
-import svAccordionGroup from './accordion/accordion-group.vue'
 import svAccordion from './accordion/accordion.vue'
 
 export default [
@@ -48,6 +47,5 @@ export default [
   svStep,
   svStepGroup,
   svAccordionItem,
-  svAccordionGroup,
   svAccordion,
 ]

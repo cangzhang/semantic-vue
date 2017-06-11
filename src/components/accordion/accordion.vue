@@ -1,23 +1,18 @@
 <template>
-  <div class="ui accordion">
-    <div class="title">
-      <i class="dropdown icon"></i>
-      <slot name="title"></slot>
-    </div>
-    <div class="content sv-accordion-content">
-      <slot name="content"></slot>
-    </div>
+  <div :class="[{
+      'ui': true,
+      'accordion': true,
+  }]">
+    <slot></slot>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'SvAccordion',
-  componentName: 'SvAccordion',
-  props: {},
-  computed: {},
-  mounted() {}
-}
+  export default {
+    name: 'SvAccordion',
+    componentName: 'SvAccordion',
+    props: {}
+  }
 </script>
 
-<style lang="stylus"></style>
+<style lang=""></style>
