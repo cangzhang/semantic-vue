@@ -1,24 +1,22 @@
 <template>
-  <div class="sv-accordion">
+  <div class="sv-accordion-item">
     <div class="title sv-accordion-title" @click="toggleAccordion" :class="activeClass">
       <i class="dropdown icon"></i>
       <slot name="title"></slot>
     </div>
-    <sv-accordion-transition>
-      <div class="content sv-accordion-content" v-show="activeClass" :class="activeClass">
-        <slot name="content"></slot>
-      </div>
-    </sv-accordion-transition>
+    <div class="content sv-accordion-content" v-show="activeClass" :class="activeClass">
+      <slot name="content"></slot>
+    </div>
   </div>
 </template>
 
 <script>
-  import SvAccordionTransition from '../../utils/accordion-transition'
+//  import SvAccordionTransition from '../../utils/accordion-transition'
 
   export default {
     name: 'SvAccordionItem',
     componentName: 'SvAccordionItem',
-    components: {SvAccordionTransition},
+//    components: {SvAccordionTransition},
     props: {
       /*withIcon: {
        type: String,
@@ -40,8 +38,10 @@
       }
     },
     methods: {
-      toggleAccordion() {
+      toggleAccordion(ev) {
         this.showContent = !this.showContent
+        this.$emit('click', ev)
+        this.$emit('change', ev)
       }
     },
     mounted() {
