@@ -1,20 +1,20 @@
 <template>
   <div>
-    <sv-accordion>
-      <sv-accordion-item>
+    <sv-accordion v-model="actives">
+      <sv-accordion-item name="1">
         <span slot="title">What is a dog?</span>
         <span slot="content">
           A dog is a type of domesticated animal.
         </span>
       </sv-accordion-item>
-      <sv-accordion-item>
+      <sv-accordion-item name="2">
         <span slot="title">What kinds of dogs are there?</span>
         <span slot="content">
           There are many breeds of dogs. Each breed varies in size and temperament.
           Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.
         </span>
       </sv-accordion-item>
-      <sv-accordion-item>
+      <sv-accordion-item name="3">
         <span slot="title">How do you acquire a dog?</span>
         <span slot="content">
           Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.
@@ -32,7 +32,12 @@
 <script>
   export default {
     name: 'accordion',
-    props: {}
+    props: {},
+    data() {
+      return {
+        actives: ['1', '2']
+      }
+    }
   }
 </script>
 

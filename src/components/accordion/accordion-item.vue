@@ -1,10 +1,10 @@
 <template>
   <div class="sv-accordion-item">
-    <div class="title sv-accordion-title" @click="toggleAccordion" :class="activeClass">
+    <div class="title sv-accordion-title" @click="toggleAccordion" :class="{ 'active': isActive }">
       <i class="dropdown icon"></i>
       <slot name="title"></slot>
     </div>
-    <div class="content sv-accordion-content" v-show="activeClass" :class="activeClass">
+    <div class="content sv-accordion-content" v-show="isActive" :class="{ 'active': isActive }">
       <slot name="content"></slot>
     </div>
   </div>
@@ -12,20 +12,24 @@
 
 <script>
 //  import SvAccordionTransition from '../../utils/accordion-transition'
+import Emitter from '../../../src/utils/emitter'
 
   export default {
     name: 'SvAccordionItem',
     componentName: 'SvAccordionItem',
+    mixins: [Emitter],
 //    components: {SvAccordionTransition},
     props: {
-      /*withIcon: {
-       type: String,
-       default: 'dropdown'
-       },*/
       active: {
         type: Boolean,
         default: false
       },
+      name: {
+        type: [String, Number],
+        default() {
+          return this._uid
+        }
+      }
     },
     data() {
       return {
@@ -33,15 +37,14 @@
       }
     },
     computed: {
-      activeClass() {
-        return this.showContent ? 'active' : ''
+      isActive() {
+        return this.$parent.activeNames.indexOf(this.name) >= 0
       }
     },
     methods: {
-      toggleAccordion(ev) {
+      toggleAccordion() {
         this.showContent = !this.showContent
-        this.$emit('click', ev)
-        this.$emit('change', ev)
+        this.dispatch('SvAccordion', 'accordion-item-click', this)
       }
     },
     mounted() {
