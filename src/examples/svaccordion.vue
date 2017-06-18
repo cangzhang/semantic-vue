@@ -54,7 +54,7 @@ export default {
   data() {
     return {
       actives: ['1', '2'],
-      actives2: ['3']
+      actives2: []
     }
   }
 }
