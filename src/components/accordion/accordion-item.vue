@@ -11,6 +11,7 @@
 </template>
 
 <script>
+//TODO: transition
 //  import SvAccordionTransition from '../../utils/accordion-transition'
 import Emitter from '../../../src/utils/emitter'
 

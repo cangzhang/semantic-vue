@@ -10,23 +10,19 @@
       <sv-accordion-item name="2">
         <span slot="title">What kinds of dogs are there?</span>
         <span slot="content">
-          There are many breeds of dogs. Each breed varies in size and temperament.
-          Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.
+          There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.
         </span>
       </sv-accordion-item>
       <sv-accordion-item name="3">
         <span slot="title">How do you acquire a dog?</span>
         <span slot="content">
           Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.
-          <br>
-          A pet shop may be the most convenient way to buy a dog.
-          <br>
-          Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home.
-          Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.
+          <br> A pet shop may be the most convenient way to buy a dog.
+          <br> Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.
         </span>
       </sv-accordion-item>
     </sv-accordion>
-        <sv-accordion v-model="actives2">
+    <sv-accordion v-model="actives2" accordion styled fluid>
       <sv-accordion-item name="1">
         <span slot="title">What is a dog?</span>
         <span slot="content">
@@ -36,19 +32,15 @@
       <sv-accordion-item name="2">
         <span slot="title">What kinds of dogs are there?</span>
         <span slot="content">
-          There are many breeds of dogs. Each breed varies in size and temperament.
-          Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.
+          There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.
         </span>
       </sv-accordion-item>
       <sv-accordion-item name="3">
         <span slot="title">How do you acquire a dog?</span>
         <span slot="content">
           Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.
-          <br>
-          A pet shop may be the most convenient way to buy a dog.
-          <br>
-          Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home.
-          Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.
+          <br> A pet shop may be the most convenient way to buy a dog.
+          <br> Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.
         </span>
       </sv-accordion-item>
     </sv-accordion>
@@ -56,16 +48,16 @@
 </template>
 
 <script>
-  export default {
-    name: 'accordion',
-    props: {},
-    data() {
-      return {
-        actives: ['1', '2'],
-        actives2: ['3']
-      }
+export default {
+  name: 'accordion',
+  props: {},
+  data() {
+    return {
+      actives: ['1', '2'],
+      actives2: ['3']
     }
   }
+}
 </script>
 
 <style lang=""></style>
