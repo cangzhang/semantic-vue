@@ -34,6 +34,9 @@
         <router-link to="/accordion">
           <sv-button compact>Accordion</sv-button>
         </router-link>
+        <router-link to="/breadcrumb">
+          <sv-button compact>Breadcrumb</sv-button>
+        </router-link>
       </sv-row>
     </sv-col>
 

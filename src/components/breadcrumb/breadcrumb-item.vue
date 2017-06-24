@@ -1,16 +1,48 @@
 <template>
-  <!--<div class="section" v-if="link"></div>
-  <a class="section" v-else></a>-->
+  <div class="sv-breadcrumb-item">
+    <a v-if="asLinkClass" :class="sectionClass" class="sv-breadcrumb-section">{{ section }}</a>
+    <div v-else class="sectionClass">{{ section }}</div>
+    
+    <div v-if="!dividerIcon" class="divider sv-breadcrumb-divider">/</div>
+    <i v-else :class="[dividerIconClass, { 'divider': true, }]" class="sv-breadcrumb-divider"></i>
+  </div>
 </template>
 
 <script>
-  //TODO
   export default {
-    name         : 'SvBreadcrumbItem',
+    name: 'SvBreadcrumbItem',
     componentName: 'SvBreadcrumbItem',
-    props        : {},
-    computed     : {},
+    props: {
+      section: [String, Number],
+      dividerIcon: [String],
+      active: [Boolean, String],
+      asLink: [Boolean, String],
+    },
+    computed: {
+      dividerIconClass() {
+        return this.dividerIcon + ' icon'
+      },
+      sectionClass() {
+        return {
+          'active': !!this.active,
+          'section': true
+        }
+      },
+      asLinkClass() {
+        if (typeof this.asLink !== 'undefined') {
+          return !!this.asLink
+        }
+        return !!this.$parent.asLink
+      }
+    },
+    mounted() {
+    }
   }
 </script>
 
-<style lang=""></style>
+<style lang="scss" scoped>
+  .sv-breadcrumb-item {
+    display: flex;
+    align-items: baseline;
+  }
+</style>

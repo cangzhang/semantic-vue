@@ -22,6 +22,8 @@ import svStep from './step/step.vue'
 import svStepGroup from './step/step-group.vue'
 import svAccordionItem from './accordion/accordion-item.vue'
 import svAccordion from './accordion/accordion.vue'
+import svBreadcrumb from './breadcrumb/breadcrumb.vue'
+import svBreadcrumbItem from './breadcrumb/breadcrumb-item.vue'
 
 export default [
   svButton,
@@ -48,4 +50,6 @@ export default [
   svStepGroup,
   svAccordionItem,
   svAccordion,
+  svBreadcrumb,
+  svBreadcrumbItem
 ]

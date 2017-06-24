@@ -1,20 +1,31 @@
 <template>
-  <div class="ui breadcrumb">
+  <div class="ui breadcrumb sv-breadcrumb">
     <slot></slot>
   </div>
 </template>
 
 <script>
   export default {
-    name         : 'SvBreadcrumb',
+    name: 'SvBreadcrumb',
     componentName: 'SvBreadcrumb',
-    props        : {
+    props: {
       separator: {
-        type   : String,
+        type: String,
         default: '/'
-      }
+      },
+      asLink: [Boolean, String],
     }
   }
 </script>
 
-<style lang=""></style>
+<style lang="scss">
+  .sv-breadcrumb {
+    display: flex !important;
+    flex-direction: row;
+    .sv-breadcrumb-item:last-child {
+      .sv-breadcrumb-divider {
+        display: none;
+      }
+    }
+  }
+</style>
