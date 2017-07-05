@@ -1,7 +1,7 @@
 <template>
   <div class="sv-breadcrumb-item">
-    <a v-if="asLinkClass" :class="sectionClass" class="sv-breadcrumb-section">{{ section }}</a>
-    <div v-else class="sectionClass">{{ section }}</div>
+    <a v-if="asLink" :class="sectionClass" class="sv-breadcrumb-section">{{ section }}</a>
+    <div v-else :class="sectionClass">{{ section }}</div>
     
     <div v-if="!dividerIcon" class="divider sv-breadcrumb-divider">/</div>
     <i v-else :class="[dividerIconClass, { 'divider': true, }]" class="sv-breadcrumb-divider"></i>
@@ -14,12 +14,14 @@
     componentName: 'SvBreadcrumbItem',
     props: {
       section: [String, Number],
-      dividerIcon: [String],
+      dividerIcon: String,
       active: [Boolean, String],
-      asLink: [Boolean, String],
+      asLink: Boolean,
     },
     computed: {
       dividerIconClass() {
+        if (typeof this.dividerIcon === 'undefined')
+          return
         return this.dividerIcon + ' icon'
       },
       sectionClass() {
@@ -28,14 +30,10 @@
           'section': true
         }
       },
-      asLinkClass() {
-        if (typeof this.asLink !== 'undefined') {
-          return !!this.asLink
-        }
-        return !!this.$parent.asLink
-      }
     },
+    methods: {},
     mounted() {
+      console.log(this.asLink)
     }
   }
 </script>

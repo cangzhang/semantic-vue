@@ -1,13 +1,24 @@
 <template>
   <div>
-    <sv-breadcrumb :as-link="pLink">
+    <sv-breadcrumb>
       <sv-breadcrumb-item section="Home" divider-icon="right chevron">
       </sv-breadcrumb-item>
       <sv-breadcrumb-item section="Store" divider-icon="right arrow">
       </sv-breadcrumb-item>
-      <sv-breadcrumb-item section="Clothes" :as-link="link">
+      <sv-breadcrumb-item section="Clothes" :as-link="cLink">
       </sv-breadcrumb-item>
-      <sv-breadcrumb-item section="T-shirt" active="true">
+      <sv-breadcrumb-item section="T-shirt" :active="active">
+      </sv-breadcrumb-item>
+    </sv-breadcrumb>
+    <sv-divider></sv-divider>
+    <sv-breadcrumb size="huge">
+      <sv-breadcrumb-item section="Home" divider-icon="right chevron">
+      </sv-breadcrumb-item>
+      <sv-breadcrumb-item section="Store" divider-icon="right arrow">
+      </sv-breadcrumb-item>
+      <sv-breadcrumb-item section="Clothes" :as-link="cLink">
+      </sv-breadcrumb-item>
+      <sv-breadcrumb-item section="T-shirt" :active="active">
       </sv-breadcrumb-item>
     </sv-breadcrumb>
   </div>
@@ -19,8 +30,8 @@
     props: {},
     data() {
       return {
-        link: false,
-        pLink: true
+        cLink: true,
+        active: true,
       }
     }
   }

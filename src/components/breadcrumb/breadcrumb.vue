@@ -1,10 +1,11 @@
 <template>
-  <div class="ui breadcrumb sv-breadcrumb">
+  <div :class="[{ui: true}, sizeClass, {breadcrumb: true}]" class="sv-breadcrumb">
     <slot></slot>
   </div>
 </template>
 
 <script>
+  import {getSize} from '../../utils/util'
   export default {
     name: 'SvBreadcrumb',
     componentName: 'SvBreadcrumb',
@@ -13,7 +14,12 @@
         type: String,
         default: '/'
       },
-      asLink: [Boolean, String],
+      size: String,
+    },
+    computed: {
+      sizeClass() {
+        return getSize(this.size)
+      }
     }
   }
 </script>
