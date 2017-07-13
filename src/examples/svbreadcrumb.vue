@@ -21,6 +21,10 @@
       <sv-breadcrumb-item section="T-shirt" :active="active">
       </sv-breadcrumb-item>
     </sv-breadcrumb>
+    
+    <sv-divider></sv-divider>
+    
+    <sv-checkbox :label="'aaa'"></sv-checkbox>
   </div>
 </template>
 

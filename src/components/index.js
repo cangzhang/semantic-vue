@@ -24,6 +24,7 @@ import svAccordionItem from './accordion/accordion-item.vue'
 import svAccordion from './accordion/accordion.vue'
 import svBreadcrumb from './breadcrumb/breadcrumb.vue'
 import svBreadcrumbItem from './breadcrumb/breadcrumb-item.vue'
+import svCheckbox from './checkbox/checkbox.vue'
 
 export default [
   svButton,
@@ -51,5 +52,6 @@ export default [
   svAccordionItem,
   svAccordion,
   svBreadcrumb,
-  svBreadcrumbItem
+  svBreadcrumbItem,
+  svCheckbox,
 ]

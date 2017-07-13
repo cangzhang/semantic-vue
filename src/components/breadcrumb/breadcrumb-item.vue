@@ -33,7 +33,7 @@
     },
     methods: {},
     mounted() {
-      console.log(this.asLink)
+//      console.log(this.asLink)
     }
   }
 </script>
